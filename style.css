@@ -1,0 +1,34 @@
+body {
+    background-color:rgb(29, 24, 24);
+    margin: 10px;
+    padding: 15px 0 15px 0;
+}
+
+.container {
+    width: 1920px;
+    height: 1080px;
+    background-color:rgb(254, 254, 254);
+    margin: 0 auto;
+}
+
+.menu_bar {
+    display: flex;
+    flex-direction:column;
+    background-color: #2d2727;
+    width: 350px;
+    height: 1080px;
+}
+header {
+    background-color: white;
+}
+.logo {
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 0 50px grey;
+}
+span {
+    font-size: 21px;
+    position: relative;
+    top: -79px;
+    left: 25px
+}
