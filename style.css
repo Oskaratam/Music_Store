@@ -1,16 +1,26 @@
+
 body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:rgb(29, 24, 24);
     margin: 10px;
     padding: 15px 0 15px 0;
 }
 
 .container {
+    display:flex;
     width: 1920px;
     height: 1080px;
     background-color:rgb(254, 254, 254);
     margin: 0 auto;
 }
-
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-image: url(./img/guitar_store.jpg);
+    width: 100%;
+    background-size: 1570px 1080px;
+}
 .menu_bar {
     display: flex;
     flex-direction:column;
@@ -20,14 +30,40 @@ body {
 }
 header {
     background-color: white;
+    height: 350px;
 }
 .logo {
     width: 350px;
     height: 350px;
     box-shadow: 0 0 50px grey;
 }
+.main_text {
+   padding-top:105px;
+}
+
+h2 {
+    color:#448e75;
+    font-size: 120px;
+    margin: 0 0 0 200px;
+    text-shadow: -2px 0px 6px #448e75;
+}
+h4 {
+    font-size: 70px;
+    margin: 0px 0 0px 200px;
+}
+h5 {
+    font-size: 50px;
+    margin: 0px 0 0px 150px;
+}
+
+h5,
+h4 {
+    color:white;
+    text-shadow: 6px 10px 10px black;
+}
+
 span {
-    font-size: 21px;
+    font-size: 16px;
     position: relative;
     top: -79px;
     left: 25px
