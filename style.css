@@ -15,7 +15,6 @@ body {
 }
 main {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     background-image: url(./img/guitar_store.jpg);
     width: 100%;
@@ -37,12 +36,18 @@ header {
     height: 350px;
     box-shadow: 0 0 50px grey;
 }
+span {
+    font-size: 16px;
+    position: relative;
+    top: -79px;
+    left: 25px
+}
 .main_text {
    padding-top:105px;
 }
 
 h2 {
-    color:#448e75;
+    color:#49b18e;
     font-size: 120px;
     margin: 0 0 0 200px;
     text-shadow: -2px 0px 6px #448e75;
@@ -61,10 +66,89 @@ h4 {
     color:white;
     text-shadow: 6px 10px 10px black;
 }
+h6 {
+    font-size: 25px;
+    margin: 0px 0 76px 0;
+    color: white;
+    text-shadow: 0 0 4px;
+}
+.products {
+    width: 1100px;
+    height: 150px;
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-end;
+    width:140px;
+    height: 140px;
+    border-radius: 70px;
+}
 
-span {
-    font-size: 16px;
-    position: relative;
-    top: -79px;
-    left: 25px
+.product.guitars {
+    background-color:#7489ab;
+}
+.product.basses {
+    background-color: #89b8b0;
+}.product.keys {
+    background-color:#7489ab;
+}.product.drums {
+    background-color: #89b8b0;
+}.product.amps {
+    background-color:#7489ab;
+}
+
+:where(.product) .guitars, .basses, .keys, .drums, .amps  {
+    box-shadow:0 0 12px;
+}
+
+.product_icon {
+    position:absolute;
+}
+.product_icon.guitar {
+    transform: rotate(59deg);
+    filter: drop-shadow(8px 5px 11px black);
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1px;
+}
+
+.product_icon.keys {
+    width: 80px;
+    height: 33px;
+    box-shadow: 0 0 0;
+    margin-bottom: 34px;
+    filter: drop-shadow(3px 5px 7px black);
+}
+.product_icon.bass {
+    transform: rotate(90deg);
+    width: 53px;
+    height: 94px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    filter: drop-shadow(6px 0px 9px black);
+}
+
+.product_icon.drums {
+    box-shadow: 0 0 0;
+    width: 60px;
+    height: 58px;
+    margin-bottom: 15px;
+}
+.product_icon.amps {
+    box-shadow: 0 0 0;
+    width: 60px;
+    height: 58px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0px 5px 6px black);
+}
+.brands {
+    width: 1570px;
+    height: 203px;
+    background-color:#e8e8e8;
 }
