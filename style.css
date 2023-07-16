@@ -42,6 +42,26 @@ header {
     top: -79px;
     left: 25px
 }
+ul{
+    margin-left: 63px;
+    margin-top: 63px;
+    list-style: none;
+}
+li {
+    color: white;
+    width: 244px;
+    font-size: 25px;
+    margin-bottom: 5px;
+    border-bottom: 2px dotted white;
+    padding: 15px;
+    border-radius: 18px;
+    transition: color 0.5s, background-color 0.5s;
+}
+li:hover {
+    background-color:white;
+    color:  #2d2727;
+}
+
 .main_text {
    padding-top:105px;
 }
@@ -164,7 +184,7 @@ h6 {
 .brand_logo {
     align-self: center;
     width: 123px;
-    height: 72px;
+    height: 68px;
 }
 .brand_logo.pearl {
     width: 115px;
