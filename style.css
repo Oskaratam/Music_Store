@@ -36,7 +36,7 @@ header {
     height: 350px;
     box-shadow: 0 0 50px grey;
 }
-span {
+:where(header) span {
     font-size: 16px;
     position: relative;
     top: -79px;
@@ -148,7 +148,30 @@ h6 {
     filter: drop-shadow(0px 5px 6px black);
 }
 .brands {
+    display: flex;
+    justify-content: space-around;
     width: 1570px;
     height: 203px;
     background-color:#e8e8e8;
 }
+.brands span {
+    color:grey;
+    font-size: 50px;
+    align-self:center;
+    border-right: 3px solid grey;
+    padding-right: 13px;
+}
+.brand_logo {
+    align-self: center;
+    width: 123px;
+    height: 72px;
+}
+.brand_logo.pearl {
+    width: 115px;
+    height: 112px
+}
+.brand_logo.marshall {
+    width: 121px;
+    height: 54px;
+}
+
