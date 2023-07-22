@@ -16,7 +16,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    background-image: url(./img/guitar_store.jpg);
+    /* background-image: url(./img/guitar_store.jpg); */
     width: 100%;
     background-size: 1570px 1080px;
 }
@@ -163,7 +163,14 @@ a:hover {
     color:#49b18e;
 }
 
-
+.background {
+    display: none
+}
+.background.active {
+    display:block;
+    width: 1570px;
+    height: 1080px;
+}
 
 .logo {
     width: 350px;
@@ -207,7 +214,18 @@ a:hover {
     filter: drop-shadow(0px 5px 6px black);
 }
 
-
+#arrow_right{
+    position: absolute;
+    display: flex;
+    align-self: flex-end;
+    width: 93px;
+    height: 135px;
+    margin: 405px 0 50px 0;
+    transition: filter 0.2s;
+}
+#arrow_right:hover {
+    filter:brightness(0);
+}
 .brand_logo {
     align-self: center;
     width: 123px;
