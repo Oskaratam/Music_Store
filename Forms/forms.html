@@ -1,0 +1,333 @@
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Registration</title>  
+    </head>
+    <body class="form">
+        <div class="content">
+            <div class="header">
+            <h1>Welcome,<br>ready to rock?</h1>
+            </div>
+            <form id="logIn" method="get">
+                <div class="inputLine first">
+                    <label for="name">Name</label><br>
+                    <input type="text" name="name" id="name" placeholder="Username or email" required autocomplete="on">
+                </div>
+
+                <div class="inputLine" style="margin-bottom:0">
+                    <label for="password">Password</label><br> 
+                    <input type="password" name="password" id="password" required autocomplete="on">
+                    <label for="showPasswordBtn" style="font-size:10px; color:grey; padding:0px; position: relative;
+                    bottom: 10px;">Show password</label>
+                    <input type="checkbox" id="showPasswordBtn" onclick="showPassword(password)">
+                    </div>
+
+                <button id="logInBtn" type="submit">Log In</button> 
+            </form>
+
+
+            <form id="signUp" class="hidden" method="get">
+                    <div class="inputLine">
+                        <label for="name2">Name</label><br>
+                        <input type="text" name="name2" id="name2" placeholder="Username or email"  autocomplete="on">
+                        <div id="nameError"></div>
+                    </div>
+
+                    <div class="inputLine">
+                        <label for="email2">Email</label><br>
+                        <input type="text" name="email" id="email2" autocomplete="on">
+                        <div id="emailError"></div>
+                    </div>
+    
+                    <div class="inputLine" style="margin-bottom: 0">
+                        <label for="password2">Password</label><br> 
+                        <input type="password" name="password2" id="password2" autocomplete="on">
+                        <div id="passwordError"></div>
+                        <label for="showPasswordBtn2" style="font-size:10px; color:grey; padding:0px">Show password</label>
+                        <input type="checkbox" id="showPasswordBtn2" onclick="showPassword(password2)">
+                    </div>          
+                    <button id="signUpBtn" type="submit">Sign Up</button> <div style="height:51px"> </div>                             
+            </form>  
+            <button type="button" id="changeBtn" class="blackTheme"> </button>
+           
+        </div> 
+        <style>
+            /*MAIN BLOCKS*/
+            body.form {
+                background-color: rgb(189, 189, 189);
+                padding: 15px 0 15px 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .content {
+                background-color: white;
+                width: 500px;
+                height: 800px;
+                margin: 10px auto;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+            }
+            .header {
+                width:500px;
+                height:250px;
+                display:flex;
+                align-items:center;
+            }
+            #signUp {
+                height:300px;
+                margin-bottom: 30px
+            }
+
+
+            /*STATES*/
+            .hidden {
+                display: none;
+            }
+            .blackTheme {
+                background-color:rgb(29, 24, 24);;
+                color:white;
+            }
+            .blackInputs {
+                background-color: rgb(29, 24, 24);;
+                border: none;
+                border-bottom: 2px solid white;
+                color:white;
+            }
+            .errorInput {
+                border: none;
+                border-bottom: 2px solid red;
+            }
+
+
+
+            /* BUTTONS */
+            #logInBtn {
+                color:white;
+                font-size:30px;
+                background-color: rgb(29, 24, 24);
+                border-radius: 15px;
+                padding:10px;
+                width:400px;
+                height:70px;
+                transition: border 0.5s;
+            }
+            #logInBtn:hover {
+                border: 4px solid #49b18e;
+                cursor:pointer;
+            }
+            #signUpBtn {
+                color: rgb(29, 24, 24);
+                font-size: 30px;
+                border-radius: 15px;
+                padding: 10px;
+                width: 350px;
+                height: 60px;
+                margin: -20px 0px 0px 87px;
+                box-shadow: 0 0 40px white;
+                transition: border 0.5s;
+            }
+            #signUpBtn:hover {
+                border: 4px solid #49b18e;
+                cursor:pointer;
+            }
+            #changeBtn {
+                font-size: 22px;
+                width: 500px;
+                height: 100px;
+                margin-top: 120px;
+                border:0;
+                transition: width 0.8s, height 0.8s, border-radius 0.8s, border 0.5s;
+            }
+            #changeBtn:hover {
+                cursor:pointer;
+                width:200px;
+                height:70px;
+                border: 4px solid #49b18e;
+                border-radius: 50px;
+            }
+            #showPasswordBtn {
+                color: black;
+                width: 12px;
+                margin: 4px 0 0 0;
+                position: relative;
+                top: 7px
+            }
+            #showPasswordBtn2 {
+                color: black;
+                width: 12px;
+                margin: 4px 0 0 0;
+                position: relative;
+                top: 11px
+            }
+
+            /* IMAGES */
+            .logo {
+                align-self: flex-start;
+                margin-left: 102px;
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                box-shadow: 0 0 50px grey;
+            }
+
+
+            /*INPUTS*/
+            .inputLine {
+                margin-bottom:20px;
+                position:relative;
+                bottom:50px;
+                right:13px;
+            }
+            .inputLine.first {
+                margin-bottom: 50px;
+            }
+            #signUp > .inputLine{
+                margin:0 50px 50px 76px;
+            }
+            input {
+                width: 100%;
+                height: 40px;
+                padding: 5px 15px;
+                border: none;
+                border-bottom: 2px solid black;
+                font-size: 20px;
+            }
+            :where(#signUp) input {
+                width:370px;
+                height: 30px;
+                font-size:15px;
+            }
+            input:focus {
+                outline: none;
+            }
+
+
+
+            /*TEXT*/
+            label {
+                font-size:25px;
+                padding:10px;
+            }
+            :where(#signUp) label {
+                font-size: 20px;
+            }
+
+            h1 {
+                margin-left: 40px;
+                margin-bottom: 136px;
+                flex: none;
+            }
+            #passwordError,
+            #nameError,
+            #emailError {
+                margin-top:5px;
+                color:red;
+                font-size:8px;
+            }
+        </style>  
+        <script>
+            const container = document.querySelector('.content'),
+                logInBtn = document.getElementById("logInBtn"),
+                changeBtn = document.getElementById("changeBtn");
+                logInForm = document.getElementById("logIn"),
+                signUpForm = document.getElementById("signUp"),
+                showPasswordBtn = document.getElementById("showPasswordBtn"),
+                showPasswordBtn2 = document.getElementById("showPasswordBtn2"),
+                password = document.getElementById("password"),
+                email2 = document.getElementById("email2"),
+                name2 = document.getElementById("name2"),
+                password2 = document.getElementById("password2"),
+                nameError = document.getElementById("nameError"),
+                emailError = document.getElementById("emailError"),
+                passwordError = document.getElementById("passwordError");
+
+
+
+            changeBtn.innerText = 'Create account';
+            changeBtn.addEventListener('click', () => {
+                logInForm.classList.toggle('hidden');
+                signUpForm.classList.toggle('hidden');
+                container.classList.toggle('blackTheme');
+                document.querySelectorAll('input').forEach(el => {
+                    el.classList.toggle('blackInputs')
+                })
+                changeBtn.classList.toggle('blackTheme');
+                if (!changeBtn.matches('.blackTheme')) {
+                    changeBtn.innerText = "Login to account"
+                }else {
+                    changeBtn.innerText = 'Create account';
+                }
+            })
+
+
+            const showPassword = (passwordTyped) => {
+            if (passwordTyped.type == 'password'){
+                passwordTyped.type = 'text'
+            } else {
+                passwordTyped.type = 'password'
+            }
+            }
+
+            //validating form
+            signUpForm.addEventListener('submit', (e) => {
+                let messageForName = [],
+                messageForPassword = [];
+                messageForEmail = [];
+                passwordError.innerHTML = null;
+                nameError.innerHTML = null;
+                emailError.innerHTML = null;
+                name2.classList.remove('errorInput');
+                password2.classList.remove('errorInput');
+                email2.classList.remove('errorInput');
+
+                //NAME VALIDATION
+                if (name2.value == '' || name2.value == null) {
+                    messageForName.push('Enter your name')
+                }else if (name2.value.length <= 3){
+                    messageForName.push('Name length must be longer than 3 characters')
+                } else if (name2.value.length >= 15) {
+                    messageForName.push('Name length must be shorter than 15 characters')
+                } else if (name2.value == '' || name2.value == null){
+                    messageForName.push('Enter your name')
+                }
+                
+                //PASSWORD VALIDATION
+                if (password2.value == ''|| password.value == null){
+                    messageForPassword.push('Enter your password')
+                }else if (password2.value.length <= 5){
+                    messageForPassword.push('Password can\'t be shorter than 5')
+                }else if (password2.value.length > 20){
+                    messageForPassword.push('Password can\'t be longer than 20')
+                }
+                if (/^\D+$/.test(password2.value)){
+                messageForPassword.push('Must contain numbers')
+                } 
+                //EMAIL VALIDATION
+                if(email2.value == '' || email2.value == null){
+                    messageForEmail.push('Enter your email');
+                }else if(!/^([\w-\.]+)@([a-z]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/.test(email2.value)){
+                    messageForEmail.push('Invalid email')
+                }
+            
+
+                if (messageForName.length > 0) {
+                    e.preventDefault();
+                    nameError.append(messageForName.join(' | '));
+                    name2.classList.add('errorInput');
+                }
+                if (messageForPassword.length > 0) {
+                    e.preventDefault();
+                    passwordError.append(messageForPassword.join(' | '));
+                    password2.classList.add('errorInput');
+                }
+                if (messageForEmail.length > 0){
+                    e.preventDefault();
+                    emailError.append(messageForEmail.join(' | '))
+                    email2.classList.add('errorInput')
+                }
+                
+            })
+        </script>  
+    </body>
+</html>

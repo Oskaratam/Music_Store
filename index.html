@@ -6,10 +6,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <dialog  id="formDialog">
+        </dialog>
         <div class="container">
             <section class="menu_bar">
                 <header>
-                    <img class="logo" src="./img/logo.png" alt="logo of the Muse Vibe">
+                    <img class="logoMain" src="./img/logo.png" alt="logo of the Muse Vibe">
                     <span>Find your muse and make her proud</span>
                 </header>
                 <ul>
@@ -28,11 +30,20 @@
                     <p> Email - <a href="mailto:musevibe@gmail.com">musevibe@gmail.com</a></p>
                 </address>
             </section>
-
+       
         <main>
-            <img id ="photo1" class="background" src="./img/guitar_store.jpg">
-            <img id ="photo2" class="background" src="./img/store_2.jpg">
+
+            <section id="user">
+                <div id="profileImage">
+                    <img class="userImg" src="./img/unknown.png"> 
+                </div>        
+                <button id="homeLogInBtn">Log in</button>
+            </section>
+
+            <img id ="photo2" class="background" src="./img/guitar_store.jpg">
+            <img id ="photo1" class="background" src="./img/store_2.jpg">
             <img id="photo3" class="background" src="./img/store.jpg">
+
             <section class="main_text">
                 <h5>visit us, you will</h5>
                 <h2>TRY<br>
@@ -69,13 +80,30 @@
 
             <section class="brands">
                 <span>Our Partners</span>
-                <img class="brand_logo fender" src="./img/brands/fender.png" alt="Fender logo">
-                <img class="brand_logo prs" src="./img/brands/prs.png" alt="PRS logo">
-                <img class="brand_logo gibson" src="./img/brands/gibson.png" alt="Gibson logo">
-                <img class="brand_logo pearl" src="./img/brands/pearl.png" alt="Pearl logo">
-                <img class="brand_logo marshall" src="./img/brands/marshall.png" alt="Marshall logo">
-                <img class="brand_logo g&l" src="./img/brands/g&l.png" alt="g&l logo">
-                
+                <div class="logos">
+                    <div class="logoSlide">
+                        <img class="brand_logo" src="./img/brands/fender.png" alt="Fender logo">
+                        <img class="brand_logo" src="./img/brands/prs.png" alt="PRS logo">
+                        <img class="brand_logo" src="./img/brands/gibson.png" alt="Gibson logo">
+                        <img class="brand_logo pearl" src="./img/brands/pearl.png" alt="Pearl logo">
+                        <img class="brand_logo marshall" src="./img/brands/marshall.png" alt="Marshall logo">
+                        <img class="brand_logo" src="./img/brands/g&l.png" alt="g&l logo">
+                        <img class="brand_logo" src="./img/brands/yamaha.png">
+                        <img class="brand_logo" src="./img/brands/martin.png">
+                        <img style="margin-right:15px" class="brand_logo" src="./img/brands/gretsch.png">
+                    </div>
+                    <div class="logoSlide">
+                        <img class="brand_logo" src="./img/brands/fender.png" alt="Fender logo">
+                        <img class="brand_logo" src="./img/brands/prs.png" alt="PRS logo">
+                        <img class="brand_logo" src="./img/brands/gibson.png" alt="Gibson logo">
+                        <img class="brand_logo pearl" src="./img/brands/pearl.png" alt="Pearl logo">
+                        <img class="brand_logo marshall" src="./img/brands/marshall.png" alt="Marshall logo">
+                        <img class="brand_logo" src="./img/brands/g&l.png" alt="g&l logo">
+                        <img class="brand_logo" src="./img/brands/yamaha.png">
+                        <img class="brand_logo" src="./img/brands/martin.png">
+                        <img style="margin-right:15px" class="brand_logo" src="./img/brands/gretsch.png">
+                    </div>
+               </div>
             </section>
             </main>
         </div>

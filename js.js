@@ -1,11 +1,21 @@
 const container = document.querySelector('main'),
-      arrow_right = document.querySelector('#arrow_right'),
-      photo1  = document.querySelector('#photo1').getAttribute('src'),
-      photo2 = document.querySelector('#photo2').getAttribute('src'),
-      photo3 = document.querySelector('#photo3').getAttribute('src');
+      formDialog = document.querySelector('#formDialog'),
+      arrow_right = document.getElementById('arrow_right'),
+      homeLogInBtn = document.getElementById('homeLogInBtn');
 
-container.style.backgroundImage = `url(${photo1})`  
+fetch('./Forms/forms.html')
+.then(res=>res.text())
+.then(data=>{
+    formDialog.innerHTML = data;
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(data, 'text/html')
+    eval(doc.querySelector('script').textContent)
+})
 
+
+
+
+container.style.backgroundImage = `url(${document.querySelector('#photo1').getAttribute('src')})`;
 let currentBg = 1,
     bg;
 
@@ -15,18 +25,8 @@ let changeBg = () => {
     } else {
         currentBg += 1;
     }
-    switch(currentBg){
-        case 1:
-            bg = photo1;
-            break;
-        case 2:
-            bg = photo2;
-            break;
-        case 3:
-            bg = photo3;
-            break;
-    }
-    container.style.backgroundImage = `url(${bg})` 
+    container.style.backgroundImage = `url(${document.querySelector('#photo'+ currentBg).getAttribute('src')})` 
 }
-
 arrow_right.addEventListener('click', changeBg);
+homeLogInBtn.addEventListener('click', () => {formDialog.showModal()})
+
