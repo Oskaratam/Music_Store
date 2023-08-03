@@ -1,4 +1,4 @@
 # Music_Store
-This is my first project ever, creating a web page prototype with pure HTML and CSS It is a music store website
+Сreating a music store website with pure HTML,CSS and JavaScript
 
 LIVE PREVIEW: https://oskaratam.github.io/Music_Store/
