@@ -20,7 +20,7 @@
                     <input type="password" name="password" id="password" required autocomplete="on">
                     <label for="showPasswordBtn" style="font-size:10px; color:grey; padding:0px; position: relative;
                     bottom: 10px;">Show password</label>
-                    <input type="checkbox" id="showPasswordBtn" onclick="showPassword(password)">
+                    <input type="checkbox" id="showPasswordBtn">
                     </div>
 
                 <button id="logInBtn" type="submit">Log In</button> 
@@ -45,7 +45,7 @@
                         <input type="password" name="password2" id="password2" autocomplete="on">
                         <div id="passwordError"></div>
                         <label for="showPasswordBtn2" style="font-size:10px; color:grey; padding:0px">Show password</label>
-                        <input type="checkbox" id="showPasswordBtn2" onclick="showPassword(password2)">
+                        <input type="checkbox" id="showPasswordBtn2">
                     </div>          
                     <button id="signUpBtn" type="submit">Sign Up</button> <div style="height:51px"> </div>                             
             </form>  
@@ -60,6 +60,7 @@
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
             .content {
+                border-radius: 5%;
                 background-color: white;
                 width: 500px;
                 height: 800px;
@@ -133,9 +134,10 @@
             }
             #changeBtn {
                 font-size: 22px;
+                border-radius:5%;
                 width: 500px;
                 height: 100px;
-                margin-top: 120px;
+                margin-top: 126px;
                 border:0;
                 transition: width 0.8s, height 0.8s, border-radius 0.8s, border 0.5s;
             }
@@ -260,14 +262,21 @@
                 }
             })
 
+            //'Show Password' Button
+            const showPassword = (passwordTyped, checkbox) => {
+                if (checkbox.checked){
+                    passwordTyped.type = 'text'
+                } else {
+                    passwordTyped.type = 'password'
+                }
+            };
+            showPasswordBtn.addEventListener('click', () => {
+                showPassword(password, showPasswordBtn);
+            });
+            showPasswordBtn2.addEventListener('click', () => {
+                showPassword(password2, showPasswordBtn2);
+            });
 
-            const showPassword = (passwordTyped) => {
-            if (passwordTyped.type == 'password'){
-                passwordTyped.type = 'text'
-            } else {
-                passwordTyped.type = 'password'
-            }
-            }
 
             //validating form
             signUpForm.addEventListener('submit', (e) => {

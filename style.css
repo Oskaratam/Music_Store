@@ -1,9 +1,21 @@
 /*MAIN SECTIONS*/
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
     background-color:rgb(29, 24, 24);
     margin: 10px;
     padding: 15px 0 15px 0;
+}
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 2; 
+  }
+.hidden {
+    visibility: hidden;
 }
 .container {
     display:flex;
@@ -21,10 +33,19 @@ main {
     width: 100%;
     background-size: 1570px 1080px;
 }
-#formDialog {
+.formDialog {
     background-color: transparent;
     border:none;
-    position:fixed;
+    position: absolute;
+    z-index: 5;
+    top:-30%;
+    left:43%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.4s, top 0.4s
+}
+.formsOpened {
+    top:10%;
+    transform:  scale(1);
 }
 .menu_bar {
     display: flex;
