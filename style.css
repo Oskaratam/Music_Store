@@ -7,6 +7,8 @@ body {
 }
 .container {
     display:flex;
+    position: relative;
+    overflow: hidden;
     width: 1920px;
     height: 1080px;
     background-color:rgb(254, 254, 254);
@@ -14,6 +16,7 @@ body {
 }
 main {
     display: flex;
+    z-index: 1;
     flex-direction: column;
     width: 100%;
     background-size: 1570px 1080px;
@@ -25,6 +28,8 @@ main {
 }
 .menu_bar {
     display: flex;
+    position: relative;
+    z-index:1;
     flex-direction:column;
     background-color: #2d2727;
     width: 350px;
@@ -33,6 +38,7 @@ main {
 header {
     background-color: white;
     height: 350px;
+    z-index: 1;
 }
 address {
     display:flex;
@@ -99,7 +105,7 @@ address {
     margin:0;
     padding: 0 50px;
     width: 2000px;
-    animation: 12s slide infinite linear;
+    animation: 40s slide infinite linear;
 }
 .products {
     width: 1100px;
@@ -232,12 +238,19 @@ a:hover {
 
 /*BACKGROUND*/
 .background {
-    display: none
+    position: absolute;
+    top: 0;
+    left: 350px;
+    width: 1570px;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; 
+    z-index: -1;
+    transition: opacity 0.4s;
+    transition-delay: 0;
 }
 .background.active {
-    display:block;
-    width: 1570px;
-    height: 1080px;
+    opacity: 1;
 }
 
 
@@ -261,7 +274,7 @@ a:hover {
 .product_icon.guitar {
     transform: rotate(59deg);
     position: absolute;
-    top: 780px;
+    top: 750px;
     filter: drop-shadow(8px 5px 11px black);
     width: 100px;
     height: 100px;
@@ -275,7 +288,7 @@ a:hover {
 .product_icon.bass {
     transform: rotate(90deg);
     position: absolute;
-    top: 780px;
+    top: 750px;
     width: 53px;
     height: 94px;
     filter: drop-shadow(6px 0px 9px black);
@@ -313,7 +326,7 @@ a:hover {
     color:white;
     width:100px;
     height:45px;
-    border-radius:35%;
+    border-radius:10rem;
     transition: background-color 0.5s, color 0.5s;
 }
 .brand_logo {

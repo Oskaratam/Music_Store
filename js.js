@@ -15,17 +15,19 @@ fetch('./Forms/forms.html')
 
 
 
-container.style.backgroundImage = `url(${document.querySelector('#photo1').getAttribute('src')})`;
+
 let currentBg = 1,
     bg;
 
 let changeBg = () => {
     if (currentBg === 3) {
-       currentBg = 1
+       document.querySelector('#photo3').classList.remove('active');
+       document.querySelector('#photo2').classList.remove('active');
+       currentBg = 1;
     } else {
         currentBg += 1;
     }
-    container.style.backgroundImage = `url(${document.querySelector('#photo'+ currentBg).getAttribute('src')})` 
+    document.querySelector('#photo'+ currentBg).classList.add('active');
 }
 arrow_right.addEventListener('click', changeBg);
 homeLogInBtn.addEventListener('click', () => {formDialog.showModal()})
