@@ -42,4 +42,9 @@ const closeForms = () => {
     formDialog.classList.remove('formsOpened');
     document.querySelector('.overlay').classList.add('hidden');
 }
-document.querySelector('.overlay').addEventListener('click', ()=>{closeForms()})
+document.querySelector('.overlay').addEventListener('click', ()=>{closeForms()});
+document.addEventListener("keydown", (e) => {
+    if (e.key == "Escape" && !formDialog.classList.contains('hidden')) {
+        closeForms();
+    }
+});
