@@ -1,0 +1,16 @@
+{
+  "name": "music_store",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD\r Creating a web page with pure HTML,CSS and JavaScript. It is a music store website\r =======\r Сreating a music store website with pure HTML,CSS and JavaScript",
+  "main": "js.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "prod": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}

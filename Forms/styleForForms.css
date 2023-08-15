@@ -1,0 +1,173 @@
+body.form {
+    background-color: rgb(189, 189, 189);
+    padding: 15px 0 15px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.content {
+    border-radius: 5%;
+    background-color: white;
+    width: 500px;
+    height: 800px;
+    margin: 10px auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.header {
+    width:500px;
+    height:250px;
+    display:flex;
+    align-items:center;
+}
+#signUp {
+    height:300px;
+    margin-bottom: 30px
+}
+
+
+/*STATES*/
+.hidden {
+    display: none;
+}
+.blackTheme {
+    background-color:rgb(29, 24, 24);;
+    color:white;
+}
+.blackInputs {
+    background-color: rgb(29, 24, 24);;
+    border: none;
+    border-bottom: 2px solid white;
+    color:white;
+}
+.errorInput {
+    border: none;
+    border-bottom: 2px solid red;
+}
+
+
+
+/* BUTTONS */
+#logInBtn {
+    color:white;
+    font-size:30px;
+    background-color: rgb(29, 24, 24);
+    border-radius: 15px;
+    padding:10px;
+    width:400px;
+    height:70px;
+    transition: border 0.5s;
+}
+#logInBtn:hover {
+    border: 4px solid #49b18e;
+    cursor:pointer;
+}
+#signUpBtn {
+    color: rgb(29, 24, 24);
+    font-size: 30px;
+    border-radius: 15px;
+    padding: 10px;
+    width: 350px;
+    height: 60px;
+    margin: -20px 0px 0px 87px;
+    box-shadow: 0 0 40px white;
+    transition: border 0.5s;
+}
+#signUpBtn:hover {
+    border: 4px solid #49b18e;
+    cursor:pointer;
+}
+#changeBtn {
+    font-size: 22px;
+    border-radius:5%;
+    width: 500px;
+    height: 100px;
+    margin-top: 126px;
+    border:0;
+    transition: width 0.8s, height 0.8s, border-radius 0.8s, border 0.5s;
+}
+#changeBtn:hover {
+    cursor:pointer;
+    width:200px;
+    height:70px;
+    border: 4px solid #49b18e;
+    border-radius: 50px;
+}
+#showPasswordBtn {
+    color: black;
+    width: 12px;
+    margin: 4px 0 0 0;
+    position: relative;
+    top: 7px
+}
+#showPasswordBtn2 {
+    color: black;
+    width: 12px;
+    margin: 4px 0 0 0;
+    position: relative;
+    top: 11px
+}
+
+/* IMAGES */
+.logo {
+    align-self: flex-start;
+    margin-left: 102px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 0 50px grey;
+}
+
+
+/*INPUTS*/
+.inputLine {
+    margin-bottom:20px;
+    position:relative;
+    bottom:50px;
+    right:13px;
+}
+.inputLine.first {
+    margin-bottom: 50px;
+}
+#signUp > .inputLine{
+    margin:0 50px 50px 76px;
+}
+input {
+    width: 100%;
+    height: 40px;
+    padding: 5px 15px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+}
+:where(#signUp) input {
+    width:370px;
+    height: 30px;
+    font-size:15px;
+}
+input:focus {
+    outline: none;
+}
+
+
+
+/*TEXT*/
+label {
+    font-size:25px;
+    padding:10px;
+}
+:where(#signUp) label {
+    font-size: 20px;
+}
+
+h1 {
+    margin-left: 40px;
+    margin-bottom: 136px;
+    flex: none;
+}
+#passwordError,
+#nameError,
+#emailError {
+    margin-top:5px;
+    color:red;
+    font-size:8px;
+}

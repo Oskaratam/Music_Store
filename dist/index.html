@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Muse Vibe</title>
+        <link rel="stylesheet" href="/index.3a01df49.css">
+        <link rel="stylesheet" href="/index.ff0956ca.css">
+        <script src="/index.c36f364e.js" defer=""></script>
+        <script src="/index.cfc3644a.js" defer=""></script>
+    </head>
+    <body>
+        <div class="overlay hidden"></div>
+        <div class="container">
+            <div class="formDialog">
+                <div class="content">
+                    <div class="header">
+                    <h1>Welcome,<br>ready to rock?</h1>
+                    </div>
+                    <form id="logIn" method="get">
+                        <div class="inputLine first">
+                            <label for="name">Name</label><br>
+                            <input type="text" name="name" id="name" placeholder="Username or email" required="" autocomplete="on">
+                        </div>
+        
+                        <div class="inputLine" style="margin-bottom: 0">
+                            <label for="password">Password</label><br> 
+                            <input type="password" name="password" id="password" required="" autocomplete="on">
+                            <label for="showPasswordBtn" style="color: gray; padding: 0; font-size: 10px; position: relative; bottom: 10px">Show password</label>
+                            <input type="checkbox" id="showPasswordBtn">
+                            </div>
+        
+                        <button id="logInBtn" type="submit">Log In</button> 
+                    </form>
+        
+        
+                    <form id="signUp" class="hidden" method="get">
+                            <div class="inputLine">
+                                <label for="name2">Name</label><br>
+                                <input type="text" name="name2" id="name2" placeholder="Username or email" autocomplete="on">
+                                <div id="nameError"></div>
+                            </div>
+        
+                            <div class="inputLine">
+                                <label for="email2">Email</label><br>
+                                <input type="text" name="email" id="email2" autocomplete="on">
+                                <div id="emailError"></div>
+                            </div>
+            
+                            <div class="inputLine" style="margin-bottom: 0">
+                                <label for="password2">Password</label><br> 
+                                <input type="password" name="password2" id="password2" autocomplete="on">
+                                <div id="passwordError"></div>
+                                <label for="showPasswordBtn2" style="color: gray; padding: 0; font-size: 10px">Show password</label>
+                                <input type="checkbox" id="showPasswordBtn2">
+                            </div>          
+                            <button id="signUpBtn" type="submit">Sign Up</button> <div style="height: 51px"> </div>                             
+                    </form>  
+                    <button type="button" id="changeBtn" class="blackTheme"> </button>              
+                </div> 
+            </div>
+            <div class="menuWrapper">
+                <section class="menu_bar">
+                    <header>
+                        <img class="logoMain" src="/logo.b82d6c7c.png" alt="logo of the Muse Vibe">
+                        <span>Find your muse and make her proud</span>
+                    </header>
+                    <ul>
+                        <li>HOME</li>
+                        <li>CATALOG</li>
+                        <li>BEST SELLERS</li>
+                        <li>USED & VINTAGE</li>
+                        <li>SERCVICE </li>
+                        <li>SUPPORT</li>
+                        <li>ABOUT US</li>
+                    </ul>
+                    <address>
+                        <p class="contact">Contact Us</p>
+                        <p>Address - Povit avenue, 64, Kyiv, 02000</p>
+                        <p> Manager - <a href="tel:0987376325">0987376325</a></p>
+                        <p> Email - <a href="mailto:musevibe@gmail.com">musevibe@gmail.com</a></p>
+                    </address>
+                </section>
+            </div>
+       
+            <main>
+                <img id="photo1" class="background active" src="/store_2.aa4d9829.jpg">
+                <img id="photo2" class="background" src="/guitar_store.a6fdccda.jpg">    
+                <img id="photo3" class="background" src="/store.4791af86.jpg">
+                <section id="user">  
+                    <div id="profileImage">
+                        <img class="userImg" src="/unknown.e61e2839.png"> 
+                    </div>        
+                    <button id="homeLogInBtn">Log in</button>          
+                </section>
+
+                <div class="cartBtn">
+                    <img id="cartImage" src="/cart.a50a9035.png" alt="CART">
+                </div>
+
+           
+
+                <section class="main_text">
+                    <h5>visit us, you will</h5>
+                    <h2>TRY<br>
+                        BUY &<br>
+                        PLAY
+                    </h2>
+                    <h4>and fall in love</h4>
+                </section>
+
+                <section class="products">
+                    <div class="product guitars">
+                        <h6>Guitars</h6>
+                        <img class="product_icon guitar" src="/guitar.547530e6.png" alt="icon of an electric guitar">
+                    </div>
+                    <div class="product basses">
+                        <h6>Basses</h6>
+                        <img class="product_icon bass" src="/bass.742ddf3d.png" alt="icon of a bass">
+                    </div>
+                    <div class="product keys">
+                        <h6>Keys</h6>  
+                        <img class="product_icon keys" src="/keys.f305e5ec.png" alt="icon of keys">  
+                    </div>
+                    <div class="product drums">  
+                        <h6>Drums</h6>   
+                        <img class="product_icon drums" src="/drums.a149218f.png" alt="icon of drums">               
+                    </div>
+                    <div class="product amps">
+                        <h6>Amps</h6>
+                        <img class="product_icon amps" src="/amp.a29bef74.png" alt="icon of an amplifier">
+                    </div>
+                </section>
+
+                <img id="arrow_right" src="/arrow.715018f7.png" alt="arrow to the right">
+
+                <section class="brands">
+                    <span>Our Partners</span>
+                    <div class="logos">
+                        <div class="logoSlide">
+                            <img class="brand_logo" src="/fender.c3a0449b.png" alt="Fender logo">
+                            <img class="brand_logo" src="/prs.29d397c1.png" alt="PRS logo">
+                            <img class="brand_logo" src="/gibson.bc9c1a50.png" alt="Gibson logo">
+                            <img class="brand_logo pearl" src="/pearl.24d35faf.png" alt="Pearl logo">
+                            <img class="brand_logo marshall" src="/marshall.483b467d.png" alt="Marshall logo">
+                            <img class="brand_logo" src="/g&l.ce67a1db.png" alt="g&l logo">
+                            <img class="brand_logo" src="/yamaha.660bbe8a.png">
+                            <img class="brand_logo" src="/martin.e6f68e18.png">
+                            <img style="margin-right: 15px" class="brand_logo" src="/gretsch.eba2de09.png">
+                        </div>
+                        <div class="logoSlide">
+                            <img class="brand_logo" src="/fender.c3a0449b.png" alt="Fender logo">
+                            <img class="brand_logo" src="/prs.29d397c1.png" alt="PRS logo">
+                            <img class="brand_logo" src="/gibson.bc9c1a50.png" alt="Gibson logo">
+                            <img class="brand_logo pearl" src="/pearl.24d35faf.png" alt="Pearl logo">
+                            <img class="brand_logo marshall" src="/marshall.483b467d.png" alt="Marshall logo">
+                            <img class="brand_logo" src="/g&l.ce67a1db.png" alt="g&l logo">
+                            <img class="brand_logo" src="/yamaha.660bbe8a.png">
+                            <img class="brand_logo" src="/martin.e6f68e18.png">
+                            <img style="margin-right: 15px" class="brand_logo" src="/gretsch.eba2de09.png">
+                        </div>
+                </div>
+                </section>
+            </main>
+        </div>
+        
+        
+
+        <div class="container secondContainer">
+
+
+
+
+
+
+
+
+
+        </div>
+    <script src="/Music_Store.3464ddca.js"></script></body>
+</html>

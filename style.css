@@ -1,10 +1,8 @@
-/*MAIN SECTIONS*/
+/*MAIN SECTION*/
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: relative;
     background-color:rgb(29, 24, 24);
-    margin: 10px;
-    padding: 15px 0 15px 0;
 }
 .overlay {
     position: fixed;
@@ -40,17 +38,28 @@ main {
     z-index: 5;
     top:-30%;
     left:43%;
+    will-change: left, top;
+    will-change: transform;
     transform: translate(-50%, -50%) scale(0.1);
     transition: transform 0.4s, top 0.4s
 }
 .formsOpened {
+    will-change: left, top;
+    will-change: transform;
     top:10%;
     transform:  scale(1);
+
+}
+.menuWrapper{
+    display: flex;
+    position: relative;
+    width: 430px;
+    height: 1080px;
 }
 .menu_bar {
     display: flex;
-    position: relative;
-    z-index:1;
+    position: fixed;
+    z-index: 0;
     flex-direction:column;
     background-color: #2d2727;
     width: 350px;
@@ -68,12 +77,13 @@ address {
     margin-top: 40px;
 }
 #user {
+    z-index: 5;
     display:flex;
     flex-direction:column;
     align-items: center;
     justify-content: space-between;
     align-self: flex-end;
-    position:absolute;
+    position:fixed;
     width:150px;
     height:170px;
     margin-top:15px;
@@ -137,7 +147,10 @@ address {
     margin-bottom: 20px;
 }
 
-/*PRODUCTS SECTION*/
+
+
+
+/*products*/
 .product {
     display: flex;
     flex-direction: column;
@@ -168,7 +181,7 @@ address {
     box-shadow:0 0 12px;
 }
 
-/*TEXT*/
+/*text*/
 :where(header) span {
     font-size: 16px;
     position: relative;
@@ -257,7 +270,7 @@ a:hover {
 }
 
 
-/*BACKGROUND*/
+/*background*/
 .background {
     position: absolute;
     top: 0;
@@ -275,7 +288,26 @@ a:hover {
 }
 
 
-/*IMAGES*/
+/*images*/
+.cartBtn {
+    cursor: pointer;
+    width:70px;
+    height:70px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    display: grid;
+    position: fixed;
+    margin-left: 1459px;
+    margin-top: 200px;
+    z-index: 5;
+}
+#cartImage {
+    justify-self: center;
+    align-self: center;
+    width:40px;
+    height:40px;
+    margin-right: 5px;
+}
 .logoMain {
     width: 350px;
     height: 350px;
@@ -366,4 +398,35 @@ a:hover {
 
 
 
+/*SECTION 2*/
+
+.container.catalog{
+    z-index: -1;
+    background-color: white
+}
+.items {
+    z-index: 2;
+    align-self: end;
+    margin-bottom: 10px;
+    margin-left: 55px;
+    width: 1600px;
+    height: 900px;
+
+    display:grid;
+    gap:2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+    width:380px;
+    height: 430px;
+    background-color: rgb(31, 30, 30);
+}
+.selectItemType {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    font-size: 40px;
+    left: 50%;
+}
 
