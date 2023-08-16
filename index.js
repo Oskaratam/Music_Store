@@ -1,15 +1,24 @@
 const container = document.querySelector('main'),
       formDialog = document.querySelector('.formDialog'),
       arrow_right = document.getElementById('arrow_right'),
-      homeLogInBtn = document.getElementById('homeLogInBtn');
+      homeLogInBtn = document.getElementById('homeLogInBtn'),
+      itemButtons = document.querySelectorAll('.itemButton');
 
+let currentBg = 1,
+    bg;
 
+const NUMBERS = {
+    1: 'first',
+    2: 'second',
+    3: 'third',
+    4: 'fourth',
+    5: 'fifth',
+    6: 'sixth'
+}
 
 
 
 //CHANGING BACKGROUNDS//
-let currentBg = 1,
-    bg;
 
 let changeBg = () => {
     if (currentBg === 3) {
@@ -24,14 +33,6 @@ let changeBg = () => {
 arrow_right.addEventListener('click', changeBg);
 
 //////////////////////////////////////////////////
-const NUMBERS = {
-    1: 'first',
-    2: 'second',
-    3: 'third',
-    4: 'fourth',
-    5: 'fifth',
-    6: 'sixth'
-}
 
 
 homeLogInBtn.addEventListener('click', () => {
@@ -89,7 +90,43 @@ const bass = {
     bass5: new Item("./img/basses/IBANEZ.jpg", "Ibanez SR605E", "1350$"),
     bass6: new Item("./img/basses/fender jazz bass.jpg", "Fender Jazz Bass", "1670$"),
 }
+const keys = {
+    itemTypeTxt: 'keys',
+    keys1: new Item("./img/keys/kawai.jpeg", "Kawai Novus NV10", "1480$"),
+    keys2: new Item("./img/keys/casio.jpg", "Casio PX-750", "870$"),
+    keys3: new Item("./img/keys/yamaha.jpg", "Yamaha p115", "630$"),
+    keys4: new Item("./img/keys/kurzwelli.png", "Kurzweil M1", "800$"),
+    keys5: new Item("./img/keys/yamaha2.jpg", "Yamaha ARIUS", "1300$"),
+    keys6: new Item("./img/keys/pearl.jpg", "Pearl River V033RW", "850$"),
+}
 
+const drums = {
+    itemTypeTxt: 'drums',
+    drums1: new Item('./img/drums/Dw.jpg', "DW Design Series", "2700$"),
+    drums2: new Item('./img/drums/maxtone.jpg', "MAXTONE MXC-3005", "920$"),
+    drums3: new Item('./img/drums/DB.jpg', "DB Percussion DB52-44", "550$"),
+    drums4: new Item('./img/drums/PDP.jpg', "PDP CONCEPT SERIES", "1270$"),
+    drums5: new Item('./img/drums/pearl.jpg', "Pearl CRB-504P", "2000$"),
+    drums6: new Item('./img/drums/pearl2.jpg', "Pearl DMP-925F" ,"1700$"),
+}
+
+const amps = {
+    itemTypeTxt: 'amps',
+    amps1: new Item('./img/amps/fender.jpg', "FENDER 65 DELUXE REVERB", "1600$"),
+    amps2: new Item('./img/amps/peavey.jpg', "PEAVEY Classic 30", "1060$"),
+    amps3: new Item('./img/amps/yamaha.jpg', "Yamaha THR15", "520$"),
+    amps4: new Item('./img/amps/ashdown.jpg', "ASHDOWN MAG 212T", "450$"),
+    amps5: new Item('./img/amps/vox.jpg', "VOX AC30C2X", "2200$"),
+    amps6: new Item('./img/amps/orange.jpg', "Orange Crush Pix", "870$"),
+}
+
+const buttonValues = {
+    "guitars": guitars,
+    "bass": bass,
+    "keys": keys,
+    "drums": drums,
+    "amps": amps,
+}
 
 createElementsInItemBoxes = () => {
     for (let i = 1; i < 7; i++){
@@ -117,4 +154,12 @@ const setItems = (itemType) => {
 }
 }
 
-setItems(guitars);
+setItems(guitars)
+
+for (let i = 0; i < itemButtons.length; i++){
+    itemButtons[i].addEventListener('click', () => {
+        document.querySelector('.currentItemButton').classList.remove('currentItemButton');
+        itemButtons[i].classList.add('currentItemButton');
+        setItems(buttonValues[itemButtons[i].value])
+    })
+}
