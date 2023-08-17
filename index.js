@@ -2,7 +2,11 @@ const container = document.querySelector('main'),
       formDialog = document.querySelector('.formDialog'),
       arrow_right = document.getElementById('arrow_right'),
       homeLogInBtn = document.getElementById('homeLogInBtn'),
-      itemButtons = document.querySelectorAll('.itemButton');
+      itemButtons = document.querySelectorAll('.itemButton'),
+      cartBtn = document.querySelector('.cartBtn'),
+      cart = document.querySelector('.cart'),
+      cartItems = document.querySelector('.cartItems')
+      addToCartButtons = document.querySelectorAll('#addToCartBtn');
 
 let currentBg = 1,
     bg;
@@ -147,7 +151,8 @@ createElementsInItemBoxes();
 const setItems = (itemType) => {
     for (let i = 1; i < 7; i++){
         let itemBox = document.querySelector(`.item.${NUMBERS[i]}`);
-        console.log(itemBox)
+        itemBox.setAttribute('data-itemtype', `${itemType.itemTypeTxt}`)
+        itemBox.setAttribute('data-item', `${itemType.itemTypeTxt + i}`)
         document.getElementsByClassName(`itemImage`)[i - 1].setAttribute('src', `${itemType[itemType.itemTypeTxt + i].image}`)
         document.getElementsByClassName('itemName')[i - 1].innerHTML = `${itemType[itemType.itemTypeTxt + i].name}`
         document.getElementsByClassName('itemPrice')[i - 1].innerHTML = `${itemType[itemType.itemTypeTxt + i].price}`
@@ -161,5 +166,41 @@ for (let i = 0; i < itemButtons.length; i++){
         document.querySelector('.currentItemButton').classList.remove('currentItemButton');
         itemButtons[i].classList.add('currentItemButton');
         setItems(buttonValues[itemButtons[i].value])
+    })
+}
+
+//////////////////////////////////////////////////////////////
+
+/*CART SYSTEM*/
+let cartItemsCount = 0;
+
+const cartItemsArray = [];
+
+
+cartBtn.addEventListener('click', ()=> {
+    cart.classList.toggle('cartOpened');
+})
+
+for (let i = 0; i < addToCartButtons.length; i++){
+    addToCartButtons[i].addEventListener('click', () => {
+        let cartItem = document.createElement('div');
+        cartItem.classList.add('cartItem');
+        cartItems.appendChild(cartItem);
+
+        let itemBox = document.querySelectorAll('.item')[i];
+        let itemObject = buttonValues[itemBox.dataset.itemtype];
+        let addedItem = itemObject[itemBox.dataset.item];
+        cartItemsArray.push(addedItem);
+
+        let cartItemName = document.createElement('p');
+        cartItemName.classList.add('cartItemName')
+        cartItemName.innerHTML = addedItem.name;
+        cartItem.appendChild(cartItemName);
+
+        let cartItemPrice = document.createElement('p');
+        cartItemPrice.classList.add('cartItemPrice');
+        cartItemPrice.innerHTML = addedItem.price;
+        cartItem.appendChild(cartItemPrice)
+        cartItemsCount += 1;
     })
 }

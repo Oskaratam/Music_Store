@@ -25,6 +25,7 @@ body {
     margin: 0 auto;
 }
 main {
+    overflow:hidden;
     display: flex;
     z-index: 3;
     flex-direction: column;
@@ -50,6 +51,66 @@ main {
     transform:  scale(1);
 
 }
+
+/*CART*/
+.cart {
+    position:fixed;
+    width:330px;
+    height: 750px;
+    background-color: rgba(227, 227, 227, 0.8);
+    backdrop-filter: blur(3px);
+    align-self: flex-end;
+    margin-top:300px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    z-index:5;
+    opacity: 0;
+    transform: translate(100%);
+    transition: transform 0.7s, opacity 0.2s;
+}
+.cartOpened {
+    transform: translate(0%);
+    display: flex;
+    opacity: 1;
+    
+}
+.cartItems {
+    display: flex;
+    margin-top:60px;
+    flex-direction: column;
+}
+.cartItem{
+    border-bottom:2px solid black;
+    width:330px;
+    height:80px;
+    background-color: none;
+    margin-bottom:1px;
+}
+#addToCartBtn {
+    position:absolute;
+    font-size: 30px;
+    width:60px;
+    height:60px;
+    background-color: #448e75;
+    border-bottom-left-radius: 20%;
+    right:0;
+    cursor: pointer;
+    border:none;
+    box-shadow: 0 0 10px rgba(4, 4, 4, 0.4);
+}
+#addToCartLabel {
+    font-size:25px;
+    position:absolute;
+    color:rgba(119, 116, 116, 0.4);
+    right:60px;
+}
+
+
+
+
+
+
+
 .menuWrapper{
     display: flex;
     position: relative;
@@ -418,8 +479,8 @@ a:hover {
     gap:2rem;
     grid-template-columns: repeat(3, 1fr);
 }
-
 .item {
+    position: relative;
     width:350px;
     height: 480px;
     background-color: white;
@@ -429,7 +490,7 @@ a:hover {
     box-shadow: 0 0 50px grey;  
 }
 .itemImage {
-    margin-top:17px;
+    margin-top:40px;
     width:350px;
     height:310px;
 }
