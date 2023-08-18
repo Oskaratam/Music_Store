@@ -6,7 +6,8 @@ const container = document.querySelector('main'),
       cartBtn = document.querySelector('.cartBtn'),
       cart = document.querySelector('.cart'),
       cartItems = document.querySelector('.cartItems')
-      addToCartButtons = document.querySelectorAll('#addToCartBtn');
+      addToCartButtons = document.querySelectorAll('#addToCartBtn'),
+      countCartItemsImage = document.getElementById('countCartItemsImage');
 
 let currentBg = 1,
     bg;
@@ -181,6 +182,11 @@ cartBtn.addEventListener('click', ()=> {
     cart.classList.toggle('cartOpened');
 })
 
+const updateCartItemsCountImage = () => {
+    countCartItemsImage.innerHTML = `${cartItemsCount}`;
+}
+
+//adding items to cart
 for (let i = 0; i < addToCartButtons.length; i++){
     addToCartButtons[i].addEventListener('click', () => {
         let cartItem = document.createElement('div');
@@ -191,6 +197,7 @@ for (let i = 0; i < addToCartButtons.length; i++){
         let itemObject = buttonValues[itemBox.dataset.itemtype];
         let addedItem = itemObject[itemBox.dataset.item];
         cartItemsArray.push(addedItem);
+        console.log(cartItemsArray);
 
         let cartItemName = document.createElement('p');
         cartItemName.classList.add('cartItemName')
@@ -202,5 +209,23 @@ for (let i = 0; i < addToCartButtons.length; i++){
         cartItemPrice.innerHTML = addedItem.price;
         cartItem.appendChild(cartItemPrice)
         cartItemsCount += 1;
+        updateCartItemsCountImage();
+
+        let removeItemButton = document.createElement('img');
+        removeItemButton.classList.add('removeItemButton');
+        removeItemButton.setAttribute('src', './img/cross.png');
+        cartItem.appendChild(removeItemButton)
+        removeItem(removeItemButton, cartItem, addedItem)
+    })
+}
+
+// removing items from cart
+
+const removeItem = (button, element, arrayItem) => {
+    button.addEventListener('click', () => {
+        element.remove();
+        cartItemsArray.splice(cartItemsArray.indexOf(arrayItem), 1)
+        cartItemsCount -= 1;
+        updateCartItemsCountImage();
     })
 }

@@ -80,11 +80,18 @@ main {
     flex-direction: column;
 }
 .cartItem{
+    display: flex;
+    justify-content: space-around;
     border-bottom:2px solid black;
     width:330px;
     height:80px;
     background-color: none;
     margin-bottom:1px;
+}
+.removeItemButton{
+    cursor:pointer;
+    width:40px;
+    height:40px;
 }
 #addToCartBtn {
     position:absolute;
@@ -104,7 +111,16 @@ main {
     color:rgba(119, 116, 116, 0.4);
     right:60px;
 }
-
+#countCartItemsImage {
+    position: absolute;
+    font-size:25px;
+    background-color: #448e75;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    right: -22%;
+    top: 62%;
+}
 
 
 
