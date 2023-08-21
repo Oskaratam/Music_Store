@@ -9,56 +9,56 @@
         <script src="./Forms/scriptForForms.js" defer></script>
     </head>
     <body>
-        <div class="overlay hidden"></div>
-        <div class="container">
-            <div class="formDialog">
-                <div class="content">
-                    <div class="header">
-                    <h1>Welcome,<br>ready to rock?</h1>
+        <div class="formDialog">
+            <div class="content">
+                <div class="header">
+                <h1>Welcome,<br>ready to rock?</h1>
+                </div>
+                <form id="logIn" method="get">
+                    <div class="inputLine firstInputLine">
+                        <label for="name">Name</label><br>
+                        <input type="text" name="name" id="name" placeholder="Username or email" required autocomplete="on">
                     </div>
-                    <form id="logIn" method="get">
-                        <div class="inputLine firstInputLine">
-                            <label for="name">Name</label><br>
-                            <input type="text" name="name" id="name" placeholder="Username or email" required autocomplete="on">
+        
+                    <div class="inputLine" style="margin-bottom:0">
+                        <label for="password">Password</label><br> 
+                        <input type="password" name="password" id="password" required autocomplete="on">
+                        <label for="showPasswordBtn" style="font-size:10px; color:grey; padding:0px; position: relative;
+                        bottom: 10px;">Show password</label>
+                        <input type="checkbox" id="showPasswordBtn">
                         </div>
         
-                        <div class="inputLine" style="margin-bottom:0">
-                            <label for="password">Password</label><br> 
-                            <input type="password" name="password" id="password" required autocomplete="on">
-                            <label for="showPasswordBtn" style="font-size:10px; color:grey; padding:0px; position: relative;
-                            bottom: 10px;">Show password</label>
-                            <input type="checkbox" id="showPasswordBtn">
-                            </div>
-        
-                        <button id="logInBtn" type="submit">Log In</button> 
-                    </form>
+                    <button id="logInBtn" type="submit">Log In</button> 
+                </form>
         
         
-                    <form id="signUp" class="hidden" method="get">
-                            <div class="inputLine">
-                                <label for="name2">Name</label><br>
-                                <input type="text" name="name2" id="name2" placeholder="Username or email"  autocomplete="on">
-                                <div id="nameError"></div>
-                            </div>
+                <form id="signUp" class="hidden" method="get">
+                        <div class="inputLine">
+                            <label for="name2">Name</label><br>
+                            <input type="text" name="name2" id="name2" placeholder="Username or email"  autocomplete="on">
+                            <div id="nameError"></div>
+                        </div>
         
-                            <div class="inputLine">
-                                <label for="email2">Email</label><br>
-                                <input type="text" name="email" id="email2" autocomplete="on">
-                                <div id="emailError"></div>
-                            </div>
+                        <div class="inputLine">
+                            <label for="email2">Email</label><br>
+                            <input type="text" name="email" id="email2" autocomplete="on">
+                            <div id="emailError"></div>
+                        </div>
             
-                            <div class="inputLine" style="margin-bottom: 0">
-                                <label for="password2">Password</label><br> 
-                                <input type="password" name="password2" id="password2" autocomplete="on">
-                                <div id="passwordError"></div>
-                                <label for="showPasswordBtn2" style="font-size:10px; color:grey; padding:0px">Show password</label>
-                                <input type="checkbox" id="showPasswordBtn2">
-                            </div>          
-                            <button id="signUpBtn" type="submit">Sign Up</button> <div style="height:51px"> </div>                             
-                    </form>  
-                    <button type="button" id="changeBtn" class="blackTheme"> </button>              
-                </div> 
-            </div>
+                        <div class="inputLine" style="margin-bottom: 0">
+                            <label for="password2">Password</label><br> 
+                            <input type="password" name="password2" id="password2" autocomplete="on">
+                            <div id="passwordError"></div>
+                            <label for="showPasswordBtn2" style="font-size:10px; color:grey; padding:0px">Show password</label>
+                            <input type="checkbox" id="showPasswordBtn2">
+                        </div>          
+                        <button id="signUpBtn" type="submit">Sign Up</button> <div style="height:51px"> </div>                             
+                </form>  
+                <button type="button" id="changeBtn" class="blackTheme"> </button>              
+            </div> 
+        </div>
+        <div class="overlay hidden"></div>
+        <div class="container">
             <div class="menuWrapper">
                 <section class="menu_bar">
                     <header>
@@ -96,12 +96,14 @@
                  
                 <div class="cartBtn">
                     <img id="cartImage" src="./img/cart.png" alt="CART">
-                    <button id="countCartItemsImage"></button>
+                    <button id="countCartItemsImage">0</button>
                 </div>
 
                 <section class="cart">
                     <div class="cartItems">
                     </div>
+                    <p class="totalPrice">Total</p>
+                    <button id="checkout">Checkout</button>
                 </section>
 
            

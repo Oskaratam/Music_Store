@@ -7,7 +7,12 @@ const container = document.querySelector('main'),
       cart = document.querySelector('.cart'),
       cartItems = document.querySelector('.cartItems')
       addToCartButtons = document.querySelectorAll('#addToCartBtn'),
-      countCartItemsImage = document.getElementById('countCartItemsImage');
+      countCartItemsImage = document.getElementById('countCartItemsImage'),
+      totalPrice = document.querySelector('.totalPrice');
+
+window.addEventListener('scroll', ()=>{
+    document.body.style.cssText = `--scrollTop: ${window.scrollY}px`
+})
 
 let currentBg = 1,
     bg;
@@ -110,7 +115,7 @@ const drums = {
     drums1: new Item('./img/drums/Dw.jpg', "DW Design Series", "2700$"),
     drums2: new Item('./img/drums/maxtone.jpg', "MAXTONE MXC-3005", "920$"),
     drums3: new Item('./img/drums/DB.jpg', "DB Percussion DB52-44", "550$"),
-    drums4: new Item('./img/drums/PDP.jpg', "PDP CONCEPT SERIES", "1270$"),
+    drums4: new Item('./img/drums/PDP.jpg', "PDP Concept", "1270$"),
     drums5: new Item('./img/drums/pearl.jpg', "Pearl CRB-504P", "2000$"),
     drums6: new Item('./img/drums/pearl2.jpg', "Pearl DMP-925F" ,"1700$"),
 }
@@ -175,7 +180,7 @@ for (let i = 0; i < itemButtons.length; i++){
 /*CART SYSTEM*/
 let cartItemsCount = 0;
 
-const cartItemsArray = [];
+let cartItemsArray = [];
 
 
 cartBtn.addEventListener('click', ()=> {
@@ -185,47 +190,113 @@ cartBtn.addEventListener('click', ()=> {
 const updateCartItemsCountImage = () => {
     countCartItemsImage.innerHTML = `${cartItemsCount}`;
 }
+const updateTotalPrice = () => {
+    let total = 0;
+    cartItemsArray.forEach(item => total += parseInt(item.price.split('$').join('')));
+    totalPrice.innerHTML = `Total ${total}$`;
+}
 
 //adding items to cart
 for (let i = 0; i < addToCartButtons.length; i++){
     addToCartButtons[i].addEventListener('click', () => {
-        let cartItem = document.createElement('div');
-        cartItem.classList.add('cartItem');
-        cartItems.appendChild(cartItem);
+        if(cartItemsCount <= 5){
+            let currentAddToCartBtn = addToCartButtons[i];
+            addToCartButtons[i].classList.add('addToCartBtnClicked')
+            
+            let itemBox = document.querySelectorAll('.item')[i];
+            let itemObject = buttonValues[itemBox.dataset.itemtype];
+            let addedItem = itemObject[itemBox.dataset.item];
 
-        let itemBox = document.querySelectorAll('.item')[i];
-        let itemObject = buttonValues[itemBox.dataset.itemtype];
-        let addedItem = itemObject[itemBox.dataset.item];
-        cartItemsArray.push(addedItem);
-        console.log(cartItemsArray);
+            if (!cartItemsArray.includes(addedItem)){
+                cartItemsArray.push(addedItem);
+                
 
-        let cartItemName = document.createElement('p');
-        cartItemName.classList.add('cartItemName')
-        cartItemName.innerHTML = addedItem.name;
-        cartItem.appendChild(cartItemName);
+                let cartItem = document.createElement('div');
+                cartItem.classList.add('cartItem');
+                cartItems.appendChild(cartItem);
+                    
+                let cartItemName = document.createElement('p');
+                cartItemName.classList.add('cartItemName')
+                cartItemName.innerHTML = addedItem.name;
+                cartItem.appendChild(cartItemName);
 
-        let cartItemPrice = document.createElement('p');
-        cartItemPrice.classList.add('cartItemPrice');
-        cartItemPrice.innerHTML = addedItem.price;
-        cartItem.appendChild(cartItemPrice)
-        cartItemsCount += 1;
-        updateCartItemsCountImage();
+                let minus = document.createElement('img');
+                minus.setAttribute('src', './img/minus.png');
+                minus.classList.add('minusIcon');
+                cartItem.appendChild(minus);
 
-        let removeItemButton = document.createElement('img');
-        removeItemButton.classList.add('removeItemButton');
-        removeItemButton.setAttribute('src', './img/cross.png');
-        cartItem.appendChild(removeItemButton)
-        removeItem(removeItemButton, cartItem, addedItem)
+                let cartItemQuantity = document.createElement('input')
+                cartItemQuantity.classList.add('cartItemQuantity');
+                cartItemQuantity.setAttribute('value', '1');
+                cartItemQuantity.setAttribute('type', "number");
+                cartItemQuantity.setAttribute('min', '1');
+                cartItemQuantity.setAttribute('max', '5');
+                cartItem.appendChild(cartItemQuantity);
+
+                let plus = document.createElement('img');
+                plus.setAttribute('src', './img/plus.png');
+                plus.classList.add('plusIcon');
+                cartItem.appendChild(plus);
+
+
+                let cartItemPrice = document.createElement('p');
+                cartItemPrice.classList.add('cartItemPrice');
+                cartItemPrice.innerHTML = addedItem.price;
+                cartItem.appendChild(cartItemPrice)
+                cartItemsCount += 1;
+                updateCartItemsCountImage();
+                updateTotalPrice();
+
+                const updateItemQuantity = () => {
+                    let value = cartItemQuantity.value;
+                    let priceNumber = parseInt(addedItem.price.split('$').join(''));
+                    cartItemsArray = cartItemsArray.filter((item) => {
+                        return item != addedItem;
+                    })
+
+                    console.log(cartItemsArray)
+                    for(let i = 0; i < value; i++){
+                        cartItemsArray.push(addedItem);
+                        cartItemPrice.innerHTML = `${priceNumber * value}$`
+                    }
+                    updateTotalPrice();
+                }
+
+                minus.addEventListener('click', ()=> {
+                    cartItemQuantity.stepDown();
+                    updateItemQuantity();
+                })
+
+                plus.addEventListener('click', ()=> {
+                    cartItemQuantity.stepUp();
+                    updateItemQuantity();
+                })
+
+
+                let removeItemButton = document.createElement('img');
+                removeItemButton.classList.add('removeItemButton');
+                removeItemButton.setAttribute('src', './img/cross.png');
+                cartItem.appendChild(removeItemButton)
+                removeItemEvent(removeItemButton, cartItem, addedItem, currentAddToCartBtn)
+            }
+        } else {
+            alert('Cart is full ;)')
+        }
+        
     })
 }
 
 // removing items from cart
 
-const removeItem = (button, element, arrayItem) => {
+const removeItemEvent = (button, element, arrayItem, currentAddToCartBtn) => {
     button.addEventListener('click', () => {
         element.remove();
-        cartItemsArray.splice(cartItemsArray.indexOf(arrayItem), 1)
+        cartItemsArray = cartItemsArray.filter((item) => {
+            return item != arrayItem;
+        })
         cartItemsCount -= 1;
         updateCartItemsCountImage();
+        updateTotalPrice();
+        currentAddToCartBtn.classList.remove('addToCartBtnClicked');
     })
 }
