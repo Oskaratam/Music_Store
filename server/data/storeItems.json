@@ -1,0 +1,53 @@
+{
+    "guitars": [
+        "guitars",
+        {"imageSource": "../img/guitars/prs_se_santana.jpg", "name": "PRS SE Santana", "price": 110000 },
+        {"imageSource":"../img/guitars/squier_affinity.jpeg", "name":"Squier Stratocaster", "price": 45000},
+        {"imageSource":"../img/guitars/fender_jazzmaster.jpg", "name":"Fender Jazzmaster", "price": 168000 },
+        {"imageSource":"../img/guitars/G&L_Asat.jpg", "name":"G&L Asat Classic", "price": 213000 },
+        {"imageSource":"../img/guitars/prs_se_245.jpg" , "name": "PRS SE 245"   , "price": 130000 },
+        {"imageSource":"../img/guitars/yamaha_revstar.jpg", "name": "Yamaha Revstar"   , "price": 76000 }
+    ],
+
+    "bass": [
+        "bass",
+        {"imageSource": "../img/basses/g&l_tribute.jpg", "name": "G&L Tribute", "price":120000},
+        {"imageSource": "../img/basses/ltd.jpg", "name": "LTD AP-204", "price": 63000},
+        {"imageSource": "../img/basses/cort_a4.jpg", "name": "CORT A4 Plus", "price": 105000},
+        {"imageSource": "../img/basses/yamaha.jpg", "name": "YAMAHA BB234", "price": 40000},
+        {"imageSource": "../img/basses/IBANEZ.jpg", "name": "Ibanez SR605E", "price": 135000},
+        {"imageSource": "../img/basses/fender jazz bass.jpg", "name": "Fender Jazz Bass", "price": 167000}
+    ],
+
+    "keys": [
+        "keys",
+        {"imageSource": "../img/keys/kawai.jpeg", "name": "Kawai Novus NV10", "price": 148000},
+        {"imageSource": "../img/keys/casio.jpg", "name": "Casio PX-750", "price": 87000},
+        {"imageSource": "../img/keys/yamaha.jpg", "name": "Yamaha p115", "price": 63000},
+        {"imageSource": "../img/keys/kurzwelli.png", "name": "Kurzweil M1", "price": 80000},
+        {"imageSource": "../img/keys/yamaha2.jpg", "name": "Yamaha ARIUS", "price": 130000},
+        {"imageSource": "../img/keys/pearl.jpg", "name": "Pearl River V033RW", "price": 85000}
+    ],
+
+    "drums": [
+        "drums",
+        {"imageSource": "../img/drums/Dw.jpg", "name": "DW Design Series", "price": 270000},
+        {"imageSource": "../img/drums/maxtone.jpg", "name": "MAXTONE MXC-3005", "price": 92000},
+        {"imageSource": "../img/drums/DB.jpg", "name": "DB Percussion DB52-44", "price": 55000},
+        {"imageSource": "../img/drums/PDP.jpg", "name": "PDP Concept", "price": 127000},
+        {"imageSource": "../img/drums/pearl.jpg", "name": "Pearl CRB-504P", "price": 200000},
+        {"imageSource": "../img/drums/pearl2.jpg", "name": "Pearl DMP-925F", "price": 170000}
+    ],
+
+    "amps": [
+        "amps",
+        {"imageSource": "../img/amps/fender.jpg", "name": "FENDER 65 DELUXE REVERB", "price": 160000},
+        {"imageSource": "../img/amps/peavey.jpg", "name": "PEAVEY Classic 30", "price": 106000},
+        {"imageSource": "../img/amps/yamaha.jpg", "name": "Yamaha THR15", "price": 52000},
+        {"imageSource": "../img/amps/ashdown.jpg", "name": "ASHDOWN MAG 212T", "price": 45000},
+        {"imageSource": "../img/amps/vox.jpg", "name": "VOX AC30C2X", "price": 220000},
+        {"imageSource": "../img/amps/orange.jpg", "name": "Orange Crush Pix", "price": 87000}
+    ]
+}
+
+
