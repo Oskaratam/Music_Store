@@ -33,7 +33,7 @@
         "drums",
         {"imageSource": "../img/drums/Dw.jpg", "name": "DW Design Series", "price": 270000},
         {"imageSource": "../img/drums/maxtone.jpg", "name": "MAXTONE MXC-3005", "price": 92000},
-        {"imageSource": "../img/drums/DB.jpg", "name": "DB Percussion DB52-44", "price": 55000},
+        {"imageSource": "../img/drums/DB.jpg", "name": "DB Percussion DB52", "price": 55000},
         {"imageSource": "../img/drums/PDP.jpg", "name": "PDP Concept", "price": 127000},
         {"imageSource": "../img/drums/pearl.jpg", "name": "Pearl CRB-504P", "price": 200000},
         {"imageSource": "../img/drums/pearl2.jpg", "name": "Pearl DMP-925F", "price": 170000}

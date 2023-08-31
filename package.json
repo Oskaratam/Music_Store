@@ -2,22 +2,27 @@
   "name": "music_store",
   "version": "1.0.0",
   "description": "<<<<<<< HEAD\r Creating a web page with pure HTML,CSS and JavaScript. It is a music store website\r =======\r Сreating a music store website with pure HTML,CSS and JavaScript",
-  "main": "js.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "prod": "parcel index.html"
+    "dev": "parcel ./Public/index.html",
+    "build": "parcel build ./Public/index.html",
+    "prod": "parcel ./Public/index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "dotenv": "^16.3.1",
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.2"
+  },
+  "staticFiles": {
+    "staticPath": "static"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "locomotive-scroll": "^4.1.4",
     "stripe": "^13.2.0"
   }
 }

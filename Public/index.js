@@ -27,8 +27,6 @@ const NUMBERS = {
     6: 'sixth'
 }
 
-
-
 //CHANGING BACKGROUNDS//
 
 let changeBg = () => {
@@ -62,6 +60,7 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+
 //CREATING CATALOG//
 
 
@@ -94,7 +93,7 @@ const setItems = (itemType) => {
 }
 }
 
-let guitars, basses, keys, drums, amps, buttonValues, itemTypesTxtToObject;
+let guitars, bass, keys, drums, amps, buttonValues, itemTypesTxtToObject;
 
 fetch('http://localhost:3000/items')
     .then(res => res.json())
@@ -137,7 +136,8 @@ for (let i = 0; i < itemButtons.length; i++){
     itemButtons[i].addEventListener('click', () => {
         document.querySelector('.currentItemButton').classList.remove('currentItemButton');
         itemButtons[i].classList.add('currentItemButton');
-        setItems(buttonValues[i])
+        setItems(buttonValues[i]);
+        addToCartButtons.forEach(button => button.classList.remove('addToCartBtnClicked'));
     })
 }
 
