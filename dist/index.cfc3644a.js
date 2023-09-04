@@ -5,7 +5,7 @@ changeBtn.addEventListener("click", ()=>{
     logInForm.classList.toggle("hidden");
     signUpForm.classList.toggle("hidden");
     forms.classList.toggle("blackTheme");
-    document.querySelectorAll("input").forEach((el)=>{
+    document.querySelectorAll(".signUpInputs").forEach((el)=>{
         el.classList.toggle("blackInputs");
     });
     changeBtn.classList.toggle("blackTheme");

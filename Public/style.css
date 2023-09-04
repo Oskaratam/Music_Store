@@ -11,6 +11,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
     z-index: 4; 
+    z-index: 4; 
   }
 .hidden {
     visibility: hidden;
@@ -26,7 +27,9 @@ body {
 }
 main {
     overflow:hidden;
+    overflow:hidden;
     display: flex;
+    z-index: 3;
     z-index: 3;
     flex-direction: column;
     width: 100%;
@@ -38,150 +41,23 @@ main {
     position: absolute;
     z-index: 5;
     top:-30px;
+    top:-30px;
     left:43%;
     will-change: left, top;
     will-change: transform;
+    transform: translate(-50%, -50%) scale(0.000000000001);
     transform: translate(-50%, -50%) scale(0.000000000001);
     transition: transform 0.4s, top 0.4s
 }
 .formsOpened {
     z-index: 7;
+    z-index: 7;
     will-change: left, top;
     will-change: transform;
     top: calc(var(--scrollTop));
+    top: calc(var(--scrollTop));
     transform:  scale(1);
-
 }
-
-/*CART*/
-.cart {
-    position:fixed;
-    width:450px;
-    height: 750px;
-    background-color: rgba(227, 227, 227, 0.8);
-    backdrop-filter: blur(3px);
-    align-self: flex-end;
-    margin-top:300px;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
-    z-index:5;
-    opacity: 0;
-    transform: translate(100%);
-    transition: transform 0.7s, opacity 0.2s;
-}
-.cartOpened {
-    transform: translate(0%);
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    
-}
-.cartItems {
-    display: flex;
-    margin-top: 40px;
-    width: 450px;
-    height: 570px;
-    flex-direction: column;
-}
-.cartItem{
-    display: flex;
-    border-bottom:2px solid black;
-    width:450px;
-    height:80px;
-    background-color: none;
-    margin-bottom:1px;
-}
-.cartItemName {
-    font-size: 23px;
-    align-self: center;
-    width:155px;
-    margin:20px 8px 20px 20px;
-}
-.cartItemQuantity::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-.cartItemQuantity {
-    pointer-events: none;
-    border:none;
-    background-color: transparent;
-    align-self: center;
-    width:15px;
-    margin-right:10px;
-    font-size:25px;
-    text-align: center;
-}
-.minusIcon,
-.plusIcon {
-    width:30px;
-    height:30px;
-    object-fit: cover;
-    align-self: center;
-    cursor:pointer;
-}
-.cartItemPrice {
-    font-size: 25px;
-    align-self: center;
-    margin-left: 15px;
-}
-.removeItemButton{
-    cursor:pointer;
-    align-self: center;
-    position: absolute;
-    right:10px;
-    width:35px;
-    height:35px;
-}
-#addToCartBtn {
-    position:absolute;
-    font-size: 30px;
-    width:60px;
-    height:60px;
-    background-color: #448e75;
-    border-bottom-left-radius: 20%;
-    right:0;
-    cursor: pointer;
-    border:none;
-    box-shadow: 0 0 10px rgba(4, 4, 4, 0.4);
-    transition: background-color 0.5s;
-}
-#addToCartBtn.addToCartBtnClicked {
-    background-color: rgba(119, 116, 116, 0.4);
-}
-#addToCartLabel {
-    font-size:25px;
-    position:absolute;
-    right:60px;
-}
-#countCartItemsImage {
-    position: absolute;
-    font-size:25px;
-    background-color: #448e75;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    right: -22%;
-    top: 62%;
-}
-.totalPrice {
-    width:450px;
-    height:25px;
-    font-size:2rem;
-    margin-left:30px;
-    word-spacing: 220px;
-    margin-bottom:40px;
-}
-#checkout {
-    cursor:pointer;
-    background-color: #448e75;
-    border:none;
-    width:450px;
-    height:120px;
-    font-size: 2rem;
-    border-bottom-left-radius:50px;
-}
-
-
-
 
 
 
@@ -194,6 +70,7 @@ main {
 .menu_bar {
     display: flex;
     position: fixed;
+    z-index: 2;
     z-index: 2;
     flex-direction:column;
     background-color: #2d2727;
@@ -298,7 +175,6 @@ address {
 }
 .product:hover {
     cursor:pointer;
-    box-shadow: 0 0 100px white;
 }
 .product.guitars {
     background-color:#7489ab;
@@ -531,15 +407,112 @@ a:hover {
     height: 60px;
 }
 
+/*SECTION ADDS*/
+
+.container.adds {
+    overflow: hidden;
+}
+
+.wrapperForAdds {
+    display: flex;
+    overflow: hidden;
+    flex-direction:column;
+    width:110%;
+    height:100%;
+}
+
+.textForMusicGenres {
+    margin: 50px 0 30px 0;
+    position: relative;
+    opacity: 0;
+    align-self: center;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 100px;
+    border-top: 3px solid black;
+    padding-top: 15px;
+    transition: opacity 1s ease-out;
+}
+.textForMusicGenresOpened {
+    opacity: 1;
+}
+.textForMusicGenres > span {
+    font-size: 50px;
+    position: relative;
+    color:rgba(0, 0, 0, 0.7);
+    transition: top 3s;
+}
 
 
-/*SECTION 2*/
+.musicGenres {
+    width: 110%;
+    height:400px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    z-index: 2;
+}
+.add1 {
+    height:400px;
+    background-image: url('../static/img/jazz2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.add2 {
+    height:400px;
+    background-image: url('../static/img/jazz.jpg');
+    background-position:65%;
+}
+.add3 {
+    height:400px;
+    background-image: url('../static/img/jazz3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mainAddBoxes {
+    width: 100%;
+    height:500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.addBox1,
+.addBox2 {
+    width:600px;
+    height:400px;
+    background-color: black;
+}
+
+.addBox1{
+    background-image: url('../static/img/custom.jpg');
+    background-position: left;
+    background-size: cover;
+}
+
+.addBox2 {
+    background-image: url('../static/img/sessions.jpg');
+    background-size:600px 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+/*SECTION CATALOG*/
 
 .container.catalog{
+    z-index: 0;
     z-index: 0;
     background-color: white;
     height: 1180px;
 }
+
 
 .items {
     z-index: 2;
@@ -555,6 +528,7 @@ a:hover {
 }
 .item {
     position: relative;
+    position: relative;
     width:350px;
     height: 480px;
     background-color: white;
@@ -564,6 +538,7 @@ a:hover {
     box-shadow: 0 0 50px grey;  
 }
 .itemImage {
+    margin-top:40px;
     margin-top:40px;
     width:350px;
     height:310px;
@@ -609,4 +584,138 @@ a:hover {
     color:#448e75;
     text-shadow: 0 0 4px white;
     font-size: 2.8rem;
+}
+
+
+/*SECTION SERVICE*/
+
+.serviceBackground {
+    position: absolute;
+    left:350px;
+    bottom: -35px;
+    height: 1080px;
+}
+
+.serviceText {
+    position:absolute;
+    width:1300px;
+    left: 17%;
+    top: 15%;
+    text-align: center;
+    color: #448e75;
+    font-size: 50px;
+    text-shadow: 0 10px 40px grey;
+    z-index: 1;
+    line-height: 80px;
+}
+
+.serviceBackground > img {
+    position:absolute;
+    width: 1570px;
+    height: 1045px;
+    z-index: 0;
+}
+
+.leftSideImage {
+    left: -600px;
+    will-change: left;
+    transition: left 1s ease-out;
+}
+
+.rightSideImage {
+    z-index: 1;
+    right: -2300px;
+    will-change: right;
+    transition: right 1s ease-out;
+}
+
+
+
+.rightSideImageOpened {
+    right: -1570px;
+    transition-delay: 0.6s;
+
+}
+
+.messageBubble {
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    left: 76%;
+    top: 35%;
+    transform: rotate(39deg);
+    z-index: 0;
+}
+.contactLuthierText {
+    text-align: center;
+    font-size: 1.9rem;
+    line-height: 53px;
+    position: absolute;
+    top: 42%;
+    left: 77%;
+    transform: rotate(42deg);
+}
+
+
+
+
+.issueForm {
+    width:500px;
+    height:600px;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #448e75;
+    box-shadow: 0 0 50px grey;
+    position: relative;
+    margin:0 auto;
+    right:30px;
+    align-self: end;
+    z-index: 2;
+    background-color: white;
+}
+
+.issueForm > label {
+    font-size: 30px
+}
+
+.issueEmailInput {
+    width:300px;
+    background-color: white;
+    align-self:center;
+    border-bottom: 3px solid black;
+}
+
+.issueReportInput {
+    align-self: center;
+    resize: none;
+    font-size: 23px;
+    padding:15px;
+    border: 2px solid black;
+    width: 405px;
+    height: 250px;
+}
+
+.sendReportButton {
+    background-color: #448e75;
+    cursor: pointer;
+    font-size: 25px;
+    width: 170px;
+    height:50px;
+    margin-top: 15px;
+    align-self: center;
+    border-radius: 10rem;
+}
+.acceptImage {
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 57%;
+    top: 45%;
+    will-change: top;
+    transition: top 1s ease-out;
+}
+
+.acceptImageOpened {
+    top: 32%;
 }

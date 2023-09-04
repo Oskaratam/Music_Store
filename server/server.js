@@ -10,17 +10,18 @@ const fs = require('fs'),
       path = require('path'),
       cors = require('cors'),
       stripe = require('stripe')(stripeSecretKey);
+      bcrypt = require('bcrypt');
 
 app.use(cors());
 app.use(express.json());
 
-const dataPath = path.join(__dirname, 'data', 'storeItems.json')
+const dataPathForStoreItems = path.join(__dirname, 'data', 'storeItems.json')
       
 
  app.get('/items', (req, res) => {
-    fs.readFile(dataPath, (err, data) => {
+    fs.readFile(dataPathForStoreItems, (err, data) => {
         if(err) {
-            console.log('WOAH BRO IT IS FUCKED UP',  err)
+            console.log('ERROR',  err)
             res.status(500).end();
         } else {
             const items = JSON.parse(data);
@@ -29,6 +30,8 @@ const dataPath = path.join(__dirname, 'data', 'storeItems.json')
     });
 });
 
+
+//PAYMENT SYSTEM
 app.post('/create-checkout-session', async (req, res) => {
     try {
         console.log(req.body.items)
@@ -52,11 +55,36 @@ app.post('/create-checkout-session', async (req, res) => {
             success_url: `${process.env.PUBLIC_URL}`,
             cancel_url: `${process.env.PUBLIC_URL}`,
         })
-        res.json({ url: session.url})
-
+        res.json({ url: session.url});
     } catch (e) {
         res.status(500).json({error: e.message})
     }
 })
 
+//AUTHENTIFICATION
+
+const users = [
+    { name: 'nigga', color: 'black'}
+];
+
+app.get('/users', (req, res) => {
+    res.json(users);
+})
+
+app.post('/users', async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const userName = req.body.name;
+        const userEmail = req.body.email;
+        const user = {"name": userName, "email": userEmail, "password": hashedPassword}
+        users.push(user);
+        res.status(201).send()
+    } catch (error) {
+        res.status(500).send()
+    }
+    
+})
+
+
 app.listen(3000);
+

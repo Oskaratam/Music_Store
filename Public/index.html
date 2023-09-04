@@ -5,11 +5,13 @@
         <title>Muse Vibe</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="../Forms/styleForForms.css">
+        <link rel="stylesheet" href="./cartStyling.css">
         <script src="https://checkout.stripe.com/checkout.js" defer></script>
         <script src="./index.js" defer></script>
+        <script type="module" src="./scrollingEvents.js" defer></script>
         <script src="../Forms/scriptForForms.js" defer></script>
     </head>
-    <body>
+    <body data-scroll-container>
         <div class="formDialog">
             <div class="content">
                 <div class="header">
@@ -33,22 +35,22 @@
                 </form>
         
         
-                <form id="signUp" class="hidden" method="get">
+                <form onsubmit="Event.preventDefault" id="signUp" class="hidden" method="get">
                         <div class="inputLine">
                             <label for="name2">Name</label><br>
-                            <input type="text" name="name2" id="name2" placeholder="Username or email"  autocomplete="on">
+                            <input class="signUpInputs" type="text" name="name2" id="name2" placeholder="Username or email"  autocomplete="on">
                             <div id="nameError"></div>
                         </div>
         
                         <div class="inputLine">
                             <label for="email2">Email</label><br>
-                            <input type="text" name="email" id="email2" autocomplete="on">
+                            <input class="signUpInputs" type="text" name="email" id="email2" autocomplete="on">
                             <div id="emailError"></div>
                         </div>
             
                         <div class="inputLine" style="margin-bottom: 0">
                             <label for="password2">Password</label><br> 
-                            <input type="password" name="password2" id="password2" autocomplete="on">
+                            <input class="signUpInputs" type="password" name="password2" id="password2" autocomplete="on">
                             <div id="passwordError"></div>
                             <label for="showPasswordBtn2" style="font-size:10px; color:grey; padding:0px">Show password</label>
                             <input type="checkbox" id="showPasswordBtn2">
@@ -63,17 +65,16 @@
             <div class="menuWrapper">
                 <section class="menu_bar">
                     <header>
-                        <img class="logoMain" src="../img/logo.png" alt="logo of the Muse Vibe">
+                        <img class="logoMain" src="../static/img/logo.png" alt="logo of the Muse Vibe">
                         <span>Find your muse and make her proud</span>
                     </header>
                     <ul>
-                        <li>HOME</li>
-                        <li>CATALOG</li>
-                        <li>BEST SELLERS</li>
-                        <li>USED & VINTAGE</li>
-                        <li>SERCVICE </li>
-                        <li>SUPPORT</li>
-                        <li>ABOUT US</li>
+                        <li id="homeButton">HOME</li>
+                        <li id="catalogButton">CATALOG</li>
+                        <li id="bestSellersButton">BEST SELLERS</li>
+                        <li id="serviceButton">SERVICE </li>
+                        <li id="supportButton">SUPPORT</li>
+                        <li id="aboutUsButton">ABOUT US</li>
                     </ul>
                     <address>
                         <p class="contact">Contact Us</p>
@@ -85,18 +86,18 @@
             </div>
        
             <main>
-                <img id ="photo1" class="background active" src="../img/store_2.jpg">
-                <img id ="photo2" class="background" src="../img/guitar_store.jpg">    
-                <img id="photo3" class="background" src="../img/store.jpg">
+                <img id ="photo1" class="background active" src="../static/img/store_2.jpg">
+                <img id ="photo2" class="background" src="../static/img/guitar_store.jpg">    
+                <img id="photo3" class="background" src="../static/img/store.jpg">
                 <section id="user">  
                     <div id="profileImage">
-                        <img class="userImg" src="../img/unknown.png"> 
+                        <img class="userImg" src="../static/img/unknown.png"> 
                     </div>        
                     <button id="homeLogInBtn">Log in</button>          
                 </section>
                  
                 <div class="cartBtn">
-                    <img id="cartImage" src="../img/cart.png" alt="CART">
+                    <img id="cartImage" src="../static/img/cart.png" alt="CART">
                     <button id="countCartItemsImage">0</button>
                 </div>
 
@@ -108,7 +109,6 @@
                 </section>
 
            
-
                 <section class="main_text">
                     <h5>visit us, you will</h5>
                     <h2>TRY<br>
@@ -119,68 +119,93 @@
                 </section>
 
                 <section class="products">
-                    <div class="product guitars">
+                    <div data-value="guitars" class="product guitars">
                         <h6>Guitars</h6>
-                        <img class="product_icon guitar" src="../img/guitar.png" alt="icon of an electric guitar">
+                        <img class="product_icon guitar" src="../static/img/guitar.png" alt="icon of an electric guitar">
                     </div>
-                    <div class="product basses">
+                    <div data-value="bass" class="product basses">
                         <h6>Basses</h6>
-                        <img class="product_icon bass" src="../img/bass.png" alt="icon of a bass">
+                        <img class="product_icon bass" src="../static/img/bass.png" alt="icon of a bass">
                     </div>
-                    <div class="product keys">
+                    <div data-value="keys" class="product keys">
                         <h6>Keys</h6>  
-                        <img class="product_icon keys" src="../img/keys.png" alt="icon of keys">  
+                        <img class="product_icon keys" src="../static/img/keys.png" alt="icon of keys">  
                     </div>
-                    <div class="product drums">  
+                    <div data-value="drums" class="product drums">  
                         <h6>Drums</h6>   
-                        <img class="product_icon drums" src="../img/drums.png" alt="icon of drums">               
+                        <img class="product_icon drums" src="../static/img/drums.png" alt="icon of drums">               
                     </div>
-                    <div class="product amps">
+                    <div data-value="amps" class="product amps">
                         <h6>Amps</h6>
-                        <img class="product_icon amps" src="../img/amp.png" alt="icon of an amplifier">
+                        <img class="product_icon amps" src="../static/img/amp.png" alt="icon of an amplifier">
                     </div>
                 </section>
 
-                <img id="arrow_right" src="../img/arrow.png" alt = 'arrow to the right'>
+                <img id="arrow_right" src="../static/img/arrow.png" alt = 'arrow to the right'>
 
                 <section class="brands">
                     <span>Our Partners</span>
                     <div class="logos">
                         <div class="logoSlide">
-                            <img class="brand_logo" src="../img/brands/fender.png" alt="Fender logo">
-                            <img class="brand_logo" src="../img/brands/prs.png" alt="PRS logo">
-                            <img class="brand_logo" src="../img/brands/gibson.png" alt="Gibson logo">
-                            <img class="brand_logo pearl" src="../img/brands/pearl.png" alt="Pearl logo">
-                            <img class="brand_logo marshall" src="../img/brands/marshall.png" alt="Marshall logo">
-                            <img class="brand_logo" src="../img/brands/g&l.png" alt="g&l logo">
-                            <img class="brand_logo" src="../img/brands/yamaha.png">
-                            <img class="brand_logo" src="../img/brands/martin.png">
-                            <img style="margin-right:15px" class="brand_logo" src="../img/brands/gretsch.png">
+                            <img class="brand_logo" src="../static/img/brands/fender.png" alt="Fender logo">
+                            <img class="brand_logo" src="../static/img/brands/prs.png" alt="PRS logo">
+                            <img class="brand_logo" src="../static/img/brands/gibson.png" alt="Gibson logo">
+                            <img class="brand_logo pearl" src="../static/img/brands/pearl.png" alt="Pearl logo">
+                            <img class="brand_logo marshall" src="../static/img/brands/marshall.png" alt="Marshall logo">
+                            <img class="brand_logo" src="../static/img/brands/g&l.png" alt="g&l logo">
+                            <img class="brand_logo" src="../static/img/brands/yamaha.png">
+                            <img class="brand_logo" src="../static/img/brands/martin.png">
+                            <img style="margin-right:15px" class="brand_logo" src="../static/img/brands/gretsch.png">
                         </div>
                         <div class="logoSlide">
-                            <img class="brand_logo" src="../img/brands/fender.png" alt="Fender logo">
-                            <img class="brand_logo" src="../img/brands/prs.png" alt="PRS logo">
-                            <img class="brand_logo" src="../img/brands/gibson.png" alt="Gibson logo">
-                            <img class="brand_logo pearl" src="../img/brands/pearl.png" alt="Pearl logo">
-                            <img class="brand_logo marshall" src="../img/brands/marshall.png" alt="Marshall logo">
-                            <img class="brand_logo" src="../img/brands/g&l.png" alt="g&l logo">
-                            <img class="brand_logo" src="../img/brands/yamaha.png">
-                            <img class="brand_logo" src="../img/brands/martin.png">
-                            <img style="margin-right:15px" class="brand_logo" src="../img/brands/gretsch.png">
+                            <img class="brand_logo" src="../static/img/brands/fender.png" alt="Fender logo">
+                            <img class="brand_logo" src="../static/img/brands/prs.png" alt="PRS logo">
+                            <img class="brand_logo" src="../static/img/brands/gibson.png" alt="Gibson logo">
+                            <img class="brand_logo pearl" src="../static/img/brands/pearl.png" alt="Pearl logo">
+                            <img class="brand_logo marshall" src="../static/img/brands/marshall.png" alt="Marshall logo">
+                            <img class="brand_logo" src="../static/img/brands/g&l.png" alt="g&l logo">
+                            <img class="brand_logo" src="../static/img/brands/yamaha.png">
+                            <img class="brand_logo" src="../static/img/brands/martin.png">
+                            <img style="margin-right:15px" class="brand_logo" src="../static/img/brands/gretsch.png">
                         </div>
                 </div>
                 </section>
             </main>
         </div>
-        
-        
+
+        <div data-scroll-section  class="container adds">   
+            <div class="menuWrapper">
+                <div style="background-color: #2d2727; width: 350px; height: 1180px;"></div>
+            </div>
+            <div class="wrapperForAdds">
+                <div data-scroll data-scroll-class="textForMusicGenresOpened" data-scroll-repeat="true" class="textForMusicGenres">
+                    <span>Instruments for ANY genre</span>
+                </div>
+
+                <section class="musicGenres">
+                    <div class="add1">
+                    </div>
+                    <div class="add2">
+                    </div>
+                    <div class="add3">
+                    </div>
+                </section>
+
+                <section class="mainAddBoxes">
+                    <div class="addBox1">
+                    </div>
+                    <div class="addBox2">
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <div class="container catalog">
             <div class="menuWrapper">
                 <div style="background-color: #2d2727; width: 350px; height: 1180px;">
                 </div>         
             </div>
-            <div class="menuForItems">
+            <div data-scroll data-scroll-call="closeBackground" data-scroll-repeat="true" class="menuForItems">
                 <button class="itemButton" value="keys">Keys</button>
                 <button class="itemButton" value="drums">Drums</button>
                 <button class="itemButton currentItemButton" value="guitars">Guitars</button>
@@ -219,6 +244,33 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container service">
+            <div class="menuWrapper">
+                <div style="background-color: #2d2727; width: 350px; height: 1180px; z-index: 1">
+                </div>         
+            </div>
+            <h4 class="serviceText">All our instruments have repair warranty <br> and free consultation ;)</h4>
+            <div class="serviceBackground">
+                <img src="../static/img/serviceBg1.jpg">
+                <img class="leftSideImage" src="../static/img/serviceBg2.png">
+                <img class="rightSideImage" src="../static/img/serviceBg3.png">
+                <img class="leftSideImage" src="../static/img/serviceBg4.png">
+                <img class="rightSideImage" src="../static/img/serviceBg5.png">
+                <img class="leftSideImage" src="../static/img/serviceBg6.png">
+                <img class="rightSideImage" src="../static/img/serviceBg7.png">
+                <img style="z-index: 2" class="rightSideImage" src="../static/img/serviceBg8.png">
+            </div>
+            <img class="acceptImage" src="../static/img/accept.png" alt="accepted">
+            <img class="messageBubble" src="../static/img/message.png">
+            <h1 class="contactLuthierText">Contact our luthier <br> right now!</h1>
+            <form data-scroll data-scroll-call="openBackground" data-scroll-repeat="true" name="issueReport" class="issueForm">
+                <label for=".issueEmaiInput" style="align-self: center; margin-top: 10px"> Your Email  </label>
+                <input required class="issueEmailInput" type="email">
+                <label for="issueReportInput" style="align-self: center; margin-top: 40px; margin-bottom: 20px">Explain your issue</label>
+                <textarea required rows="10" cols="1" class="issueReportInput" type="text"></textarea>
+                <input class="sendReportButton" name="IssueMessage" type="submit" value="Send">
+            </form>
         </div>
     </body>
 </html>

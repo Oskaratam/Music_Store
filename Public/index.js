@@ -9,7 +9,9 @@ const container = document.querySelector('main'),
       addToCartButtons = document.querySelectorAll('#addToCartBtn'),
       countCartItemsImage = document.getElementById('countCartItemsImage'),
       totalPrice = document.querySelector('.totalPrice'),
-      checkout = document.getElementById('checkout');
+      checkout = document.getElementById('checkout'),
+      sendReportButton = document.querySelector('.sendReportButton'),
+      issueReportInput = document.querySelector('.issueReportInput');
 
 window.addEventListener('scroll', ()=>{
     document.body.style.cssText = `--scrollTop: ${window.scrollY}px`
@@ -26,8 +28,6 @@ const NUMBERS = {
     5: 'fifth',
     6: 'sixth'
 }
-
-
 
 //CHANGING BACKGROUNDS//
 
@@ -62,6 +62,7 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+
 //CREATING CATALOG//
 
 
@@ -94,7 +95,7 @@ const setItems = (itemType) => {
 }
 }
 
-let guitars, basses, keys, drums, amps, buttonValues, itemTypesTxtToObject;
+let guitars, bass, keys, drums, amps, buttonValues, itemTypesTxtToObject;
 
 fetch('http://localhost:3000/items')
     .then(res => res.json())
@@ -137,7 +138,8 @@ for (let i = 0; i < itemButtons.length; i++){
     itemButtons[i].addEventListener('click', () => {
         document.querySelector('.currentItemButton').classList.remove('currentItemButton');
         itemButtons[i].classList.add('currentItemButton');
-        setItems(buttonValues[i])
+        setItems(buttonValues[i]);
+        addToCartButtons.forEach(button => button.classList.remove('addToCartBtnClicked'));
     })
 }
 
@@ -294,5 +296,58 @@ checkout.addEventListener('click', () => {
     })
 
 })
+
+//ACCEPT ISSUE REPORT
+
+const acceptReport = (e) => {
+    e.preventDefault();
+    console.log(issueReportInput.value);
+    issueReportInput.value = '';
+    document.querySelector('.acceptImage').classList.add('acceptImageOpened')
+    setTimeout(function(){
+        document.querySelector('.acceptImage').classList.remove('acceptImageOpened')
+    }, 2000)
+}
+
+document.querySelector('.issueForm').onsubmit = acceptReport;
+
+//AUTHENTIFICATION
+
+const logIn = document.getElementById('logIn'),
+    signUp = document.getElementById('signUp'),
+    signUpBtn = document.getElementById('signUpBtn');
+
+
+const createUser = async (name, email, password) => {
+    try {
+        const response = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({"name": name,
+                "email": email,
+                "password": password})
+    });
+    if (response.ok){
+        console.log('USER CREATED')
+    } else {
+        console.log('Failed to create user')
+    }
+   }catch (error) {
+    console.error(error);
+}}
+
+
+
+signUp.addEventListener('submit', async (e) => {
+    await createUser(document.getElementById("name2").value, document.getElementById('email2').value, document.getElementById('password2').value)
+})
+
+
+
+
+
+
 
 

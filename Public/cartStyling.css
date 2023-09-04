@@ -1,0 +1,126 @@
+/*CART*/
+.cart {
+    position:fixed;
+    width:450px;
+    height: 750px;
+    background-color: rgba(227, 227, 227, 0.8);
+    backdrop-filter: blur(3px);
+    align-self: flex-end;
+    margin-top:300px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    z-index:5;
+    opacity: 0;
+    transform: translate(100%);
+    transition: transform 0.7s, opacity 0.2s;
+}
+.cartOpened {
+    transform: translate(0%);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    
+}
+.cartItems {
+    display: flex;
+    margin-top: 40px;
+    width: 450px;
+    height: 570px;
+    flex-direction: column;
+}
+.cartItem{
+    display: flex;
+    border-bottom:2px solid black;
+    width:450px;
+    height:80px;
+    background-color: none;
+    margin-bottom:1px;
+}
+.cartItemName {
+    font-size: 23px;
+    align-self: center;
+    width:155px;
+    margin:20px 8px 20px 20px;
+}
+.cartItemQuantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.cartItemQuantity {
+    pointer-events: none;
+    border:none;
+    background-color: transparent;
+    align-self: center;
+    width:15px;
+    margin-right:10px;
+    font-size:25px;
+    text-align: center;
+}
+.minusIcon,
+.plusIcon {
+    width:30px;
+    height:30px;
+    object-fit: cover;
+    align-self: center;
+    cursor:pointer;
+}
+.cartItemPrice {
+    font-size: 25px;
+    align-self: center;
+    margin-left: 15px;
+}
+.removeItemButton{
+    cursor:pointer;
+    align-self: center;
+    position: absolute;
+    right:10px;
+    width:35px;
+    height:35px;
+}
+#addToCartBtn {
+    position:absolute;
+    font-size: 30px;
+    width:60px;
+    height:60px;
+    background-color: #448e75;
+    border-bottom-left-radius: 20%;
+    right:0;
+    cursor: pointer;
+    border:none;
+    box-shadow: 0 0 10px rgba(4, 4, 4, 0.4);
+    transition: background-color 0.5s;
+}
+#addToCartBtn.addToCartBtnClicked {
+    background-color: rgba(119, 116, 116, 0.4);
+}
+#addToCartLabel {
+    font-size:25px;
+    position:absolute;
+    right:60px;
+}
+#countCartItemsImage {
+    position: absolute;
+    font-size:25px;
+    background-color: #448e75;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    right: -22%;
+    top: 62%;
+}
+.totalPrice {
+    width:450px;
+    height:25px;
+    font-size:2rem;
+    margin-left:30px;
+    word-spacing: 200px;
+    margin-bottom:40px;
+}
+#checkout {
+    cursor:pointer;
+    background-color: #448e75;
+    border:none;
+    width:450px;
+    height:120px;
+    font-size: 2rem;
+    border-bottom-left-radius:50px;
+}
