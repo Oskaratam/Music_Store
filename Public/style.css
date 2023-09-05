@@ -502,8 +502,104 @@ a:hover {
 
 
 
+/*SECTION ADDS*/
+
+.container.adds {
+    overflow: hidden;
+}
+
+.wrapperForAdds {
+    display: flex;
+    overflow: hidden;
+    flex-direction:column;
+    width:110%;
+    height:100%;
+}
+
+.textForMusicGenres {
+    margin: 50px 0 30px 0;
+    position: relative;
+    opacity: 0;
+    align-self: center;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 100px;
+    border-top: 3px solid black;
+    padding-top: 15px;
+    transition: opacity 1s ease-out;
+}
+.textForMusicGenresOpened {
+    opacity: 1;
+}
+.textForMusicGenres > span {
+    font-size: 50px;
+    position: relative;
+    color:rgba(0, 0, 0, 0.7);
+    transition: top 3s;
+}
 
 
+.musicGenres {
+    width: 110%;
+    height:400px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    z-index: 2;
+}
+.add1 {
+    height:400px;
+    background-image: url('../static/img/jazz2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.add2 {
+    height:400px;
+    background-image: url('../static/img/jazz.jpg');
+    background-position:65%;
+}
+.add3 {
+    height:400px;
+    background-image: url('../static/img/jazz3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mainAddBoxes {
+    width: 100%;
+    height:500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.addBox1,
+.addBox2 {
+    width:600px;
+    height:400px;
+    background-color: black;
+}
+
+.addBox1{
+    background-image: url('../static/img/custom.jpg');
+    background-position: left;
+    background-size: cover;
+}
+
+.addBox2 {
+    background-image: url('../static/img/sessions.jpg');
+    background-size:600px 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+/*SECTION CATALOG*/
 /*SECTION CATALOG*/
 
 .container.catalog{

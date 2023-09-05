@@ -4,7 +4,10 @@
   "description": "<<<<<<< HEAD\r Creating a web page with pure HTML,CSS and JavaScript. It is a music store website\r =======\r Сreating a music store website with pure HTML,CSS and JavaScript",
   "scripts": {
     "dev": "parcel ./Public/index.html",
+<<<<<<< HEAD
     "startServer": "nodemon ./server/server.js",
+=======
+>>>>>>> 83de24610566b3de5c8f0b7eabe9227f390191c9
     "build": "parcel build ./Public/index.html",
     "prod": "parcel ./Public/index.html"
   },
@@ -13,7 +16,10 @@
   "license": "ISC",
   "devDependencies": {
     "dotenv": "^16.3.1",
+<<<<<<< HEAD
     "nodemon": "^3.0.1",
+=======
+>>>>>>> 83de24610566b3de5c8f0b7eabe9227f390191c9
     "parcel": "^2.9.3",
     "parcel-reporter-static-files-copy": "^1.5.2"
   },

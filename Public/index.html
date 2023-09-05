@@ -6,11 +6,14 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="../Forms/styleForForms.css">
         <link rel="stylesheet" href="./cartStyling.css">
+        <link rel="stylesheet" href="./cartStyling.css">
         <script src="https://checkout.stripe.com/checkout.js" defer></script>
         <script src="./index.js" defer></script>
         <script type="module" src="./scrollingEvents.js" defer></script>
+        <script type="module" src="./scrollingEvents.js" defer></script>
         <script src="../Forms/scriptForForms.js" defer></script>
     </head>
+    <body data-scroll-container>
     <body data-scroll-container>
         <div class="formDialog">
             <div class="content">
@@ -66,9 +69,16 @@
                 <section class="menu_bar">
                     <header>
                         <img class="logoMain" src="../static/img/logo.png" alt="logo of the Muse Vibe">
+                        <img class="logoMain" src="../static/img/logo.png" alt="logo of the Muse Vibe">
                         <span>Find your muse and make her proud</span>
                     </header>
                     <ul>
+                        <li id="homeButton">HOME</li>
+                        <li id="catalogButton">CATALOG</li>
+                        <li id="bestSellersButton">BEST SELLERS</li>
+                        <li id="serviceButton">SERVICE </li>
+                        <li id="supportButton">SUPPORT</li>
+                        <li id="aboutUsButton">ABOUT US</li>
                         <li id="homeButton">HOME</li>
                         <li id="catalogButton">CATALOG</li>
                         <li id="bestSellersButton">BEST SELLERS</li>
@@ -89,14 +99,19 @@
                 <img id ="photo1" class="background active" src="../static/img/store_2.jpg">
                 <img id ="photo2" class="background" src="../static/img/guitar_store.jpg">    
                 <img id="photo3" class="background" src="../static/img/store.jpg">
+                <img id ="photo1" class="background active" src="../static/img/store_2.jpg">
+                <img id ="photo2" class="background" src="../static/img/guitar_store.jpg">    
+                <img id="photo3" class="background" src="../static/img/store.jpg">
                 <section id="user">  
                     <div id="profileImage">
+                        <img class="userImg" src="../static/img/unknown.png"> 
                         <img class="userImg" src="../static/img/unknown.png"> 
                     </div>        
                     <button id="homeLogInBtn">Log in</button>          
                 </section>
                  
                 <div class="cartBtn">
+                    <img id="cartImage" src="../static/img/cart.png" alt="CART">
                     <img id="cartImage" src="../static/img/cart.png" alt="CART">
                     <button id="countCartItemsImage">0</button>
                 </div>
@@ -120,27 +135,38 @@
 
                 <section class="products">
                     <div data-value="guitars" class="product guitars">
+                    <div data-value="guitars" class="product guitars">
                         <h6>Guitars</h6>
+                        <img class="product_icon guitar" src="../static/img/guitar.png" alt="icon of an electric guitar">
                         <img class="product_icon guitar" src="../static/img/guitar.png" alt="icon of an electric guitar">
                     </div>
                     <div data-value="bass" class="product basses">
+                    <div data-value="bass" class="product basses">
                         <h6>Basses</h6>
+                        <img class="product_icon bass" src="../static/img/bass.png" alt="icon of a bass">
                         <img class="product_icon bass" src="../static/img/bass.png" alt="icon of a bass">
                     </div>
                     <div data-value="keys" class="product keys">
+                    <div data-value="keys" class="product keys">
                         <h6>Keys</h6>  
+                        <img class="product_icon keys" src="../static/img/keys.png" alt="icon of keys">  
                         <img class="product_icon keys" src="../static/img/keys.png" alt="icon of keys">  
                     </div>
                     <div data-value="drums" class="product drums">  
+                    <div data-value="drums" class="product drums">  
                         <h6>Drums</h6>   
+                        <img class="product_icon drums" src="../static/img/drums.png" alt="icon of drums">               
                         <img class="product_icon drums" src="../static/img/drums.png" alt="icon of drums">               
                     </div>
                     <div data-value="amps" class="product amps">
+                    <div data-value="amps" class="product amps">
                         <h6>Amps</h6>
+                        <img class="product_icon amps" src="../static/img/amp.png" alt="icon of an amplifier">
                         <img class="product_icon amps" src="../static/img/amp.png" alt="icon of an amplifier">
                     </div>
                 </section>
 
+                <img id="arrow_right" src="../static/img/arrow.png" alt = 'arrow to the right'>
                 <img id="arrow_right" src="../static/img/arrow.png" alt = 'arrow to the right'>
 
                 <section class="brands">
@@ -156,8 +182,26 @@
                             <img class="brand_logo" src="../static/img/brands/yamaha.png">
                             <img class="brand_logo" src="../static/img/brands/martin.png">
                             <img style="margin-right:15px" class="brand_logo" src="../static/img/brands/gretsch.png">
+                            <img class="brand_logo" src="../static/img/brands/fender.png" alt="Fender logo">
+                            <img class="brand_logo" src="../static/img/brands/prs.png" alt="PRS logo">
+                            <img class="brand_logo" src="../static/img/brands/gibson.png" alt="Gibson logo">
+                            <img class="brand_logo pearl" src="../static/img/brands/pearl.png" alt="Pearl logo">
+                            <img class="brand_logo marshall" src="../static/img/brands/marshall.png" alt="Marshall logo">
+                            <img class="brand_logo" src="../static/img/brands/g&l.png" alt="g&l logo">
+                            <img class="brand_logo" src="../static/img/brands/yamaha.png">
+                            <img class="brand_logo" src="../static/img/brands/martin.png">
+                            <img style="margin-right:15px" class="brand_logo" src="../static/img/brands/gretsch.png">
                         </div>
                         <div class="logoSlide">
+                            <img class="brand_logo" src="../static/img/brands/fender.png" alt="Fender logo">
+                            <img class="brand_logo" src="../static/img/brands/prs.png" alt="PRS logo">
+                            <img class="brand_logo" src="../static/img/brands/gibson.png" alt="Gibson logo">
+                            <img class="brand_logo pearl" src="../static/img/brands/pearl.png" alt="Pearl logo">
+                            <img class="brand_logo marshall" src="../static/img/brands/marshall.png" alt="Marshall logo">
+                            <img class="brand_logo" src="../static/img/brands/g&l.png" alt="g&l logo">
+                            <img class="brand_logo" src="../static/img/brands/yamaha.png">
+                            <img class="brand_logo" src="../static/img/brands/martin.png">
+                            <img style="margin-right:15px" class="brand_logo" src="../static/img/brands/gretsch.png">
                             <img class="brand_logo" src="../static/img/brands/fender.png" alt="Fender logo">
                             <img class="brand_logo" src="../static/img/brands/prs.png" alt="PRS logo">
                             <img class="brand_logo" src="../static/img/brands/gibson.png" alt="Gibson logo">
@@ -171,6 +215,33 @@
                 </div>
                 </section>
             </main>
+        </div>
+
+        <div data-scroll-section  class="container adds">   
+            <div class="menuWrapper">
+                <div style="background-color: #2d2727; width: 350px; height: 1180px;"></div>
+            </div>
+            <div class="wrapperForAdds">
+                <div data-scroll data-scroll-class="textForMusicGenresOpened" data-scroll-repeat="true" class="textForMusicGenres">
+                    <span>Instruments for ANY genre</span>
+                </div>
+
+                <section class="musicGenres">
+                    <div class="add1">
+                    </div>
+                    <div class="add2">
+                    </div>
+                    <div class="add3">
+                    </div>
+                </section>
+
+                <section class="mainAddBoxes">
+                    <div class="addBox1">
+                    </div>
+                    <div class="addBox2">
+                    </div>
+                </section>
+            </div>
         </div>
 
         <div data-scroll-section  class="container adds">   
