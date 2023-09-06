@@ -1,8 +1,10 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config({path: '../.env'});
-}
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY,
-      stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
+
+require('dotenv').config({path: 'C:/Users/User/repos/Music_Store/.env'});
+
+
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
+
 
 const express = require('express');
 const app = express();
@@ -63,9 +65,7 @@ app.post('/create-checkout-session', async (req, res) => {
 
 //AUTHENTIFICATION
 
-const users = [
-    { name: 'nigga', color: 'black'}
-];
+const users = [];
 
 app.get('/users', (req, res) => {
     res.json(users);
@@ -82,8 +82,30 @@ app.post('/users', async (req, res) => {
     } catch (error) {
         res.status(500).send()
     }
-    
 })
+
+
+app.post('/users/login', async (req, res) => {
+    const foundUser = users.find((user) => user.email === req.body.inputEmail);
+    if (foundUser == null) {
+        console.log('UserNotFound');
+        res.status(400).send('Invalid Email')
+    }
+    try {
+        if (await bcrypt.compare(req.body.inputPassword, foundUser.password)) {
+            res.status(200).send('Success')
+        } else {
+            res.status(400).send('Invalid Password or Email')
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send();
+    }
+})
+
+
+
+
 
 
 app.listen(3000);

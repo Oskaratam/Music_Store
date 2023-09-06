@@ -338,11 +338,47 @@ const createUser = async (name, email, password) => {
     console.error(error);
 }}
 
+createUser("testUser", "test@gmail.com", "12345");
+
+const loginVerification = async (email, password) => {
+    try {
+        const response = await fetch("http://localhost:3000/users/login", {    
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "inputEmail": email,
+                "inputPassword": password
+            }) 
+        })
+        if (response.ok) {
+            console.log('YOU HAVE ACCESS');
+            document.querySelector('.userImg').setAttribute('src', '../static/img/userActive.png');
+        } else {
+            console.log("Invalid Email or Password")
+        }
+    } catch (e) {
+        console.error(e);
+    }
+    
+}
+
+
+
 
 
 signUp.addEventListener('submit', async (e) => {
     await createUser(document.getElementById("name2").value, document.getElementById('email2').value, document.getElementById('password2').value)
 })
+
+
+document.getElementById('logIn').addEventListener('submit', async (e) => {
+    e.preventDefault();
+   await loginVerification(document.getElementById("email").value, document.getElementById("password").value);
+})
+
+
 
 
 
