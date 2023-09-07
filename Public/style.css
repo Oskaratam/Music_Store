@@ -806,7 +806,7 @@ a:hover {
     flex-direction: column;
     align-self: center;
     width: 1300px;
-    height: 2000px;
+    height: 2150px;
 }
 
 .backgroundVideo {
@@ -814,6 +814,28 @@ a:hover {
     height: 650px;
     margin-top: 80px;
     align-self: center;
+}
+
+.textForBest {
+    align-self: center;
+    width: 1150px;
+    word-break: normal;
+    font-size:25px;
+    text-align: center;
+    margin: 30px 0 30px 0;
+}
+
+.controlsImage {
+    align-self: center;
+    width:700px;
+    height:200px;
+    margin: 20px;
+}
+
+.silentGuitarsImage {
+    align-self: center;
+    margin-left:6px;
+    width: 1150px;
 }
 
 
