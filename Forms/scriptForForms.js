@@ -64,8 +64,8 @@ const forms = document.querySelector('.content'),
                     messageForName.push('Enter your name')
                 }else if (name2.value.length <= 3){
                     messageForName.push('Name length must be longer than 3 characters')
-                } else if (name2.value.length >= 15) {
-                    messageForName.push('Name length must be shorter than 15 characters')
+                } else if (name2.value.length >= 12) {
+                    messageForName.push('Name length must be shorter than 12 characters')
                 } else if (name2.value == '' || name2.value == null){
                     messageForName.push('Enter your name')
                 }

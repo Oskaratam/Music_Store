@@ -65,7 +65,8 @@ app.post('/create-checkout-session', async (req, res) => {
 
 //AUTHENTIFICATION
 
-const users = [];
+const users = [
+];
 
 app.get('/users', (req, res) => {
     res.json(users);
@@ -93,9 +94,13 @@ app.post('/users/login', async (req, res) => {
     }
     try {
         if (await bcrypt.compare(req.body.inputPassword, foundUser.password)) {
-            res.status(200).send('Success')
+            const data = {
+                "name": foundUser.name,
+                "message": 'Success',
+            }
+            res.status(200).json(data);
         } else {
-            res.status(400).send('Invalid Password or Email')
+            res.status(400).send('Invalid Password or Email');
         }
     } catch (error) {
         console.error(error);

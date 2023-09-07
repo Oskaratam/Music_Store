@@ -66,7 +66,7 @@ document.addEventListener("keydown", (e) => {
 //CREATING CATALOG//
 
 
-createElementsInItemBoxes = () => {
+const createElementsInItemBoxes = () => {
     for (let i = 1; i < 7; i++){
         let image = document.createElement('img');
         image.classList.add('itemImage');
@@ -79,8 +79,25 @@ createElementsInItemBoxes = () => {
         itemContainer.appendChild(name);
         itemContainer.appendChild(price);
     }
+
+    for(let i = 1; i < 3; i++) {
+        let image2 = document.createElement('img');
+        image2.classList.add('bestSellerImage');
+        let name2 = document.createElement('span');
+        name2.classList.add('bestSellerName');
+        let price2 = document.createElement('span');
+        price2.classList.add('bestSellerPrice');
+        let bestSellerContainer = document.querySelector(`.${NUMBERS[i]}Best`);
+        bestSellerContainer.appendChild(image2);
+        bestSellerContainer.appendChild(name2);
+        bestSellerContainer.appendChild(price2);
+    }
+
+
 };
 createElementsInItemBoxes();
+
+
 
 
 
@@ -104,7 +121,8 @@ fetch('http://localhost:3000/items')
         bass = data.bass,
         keys = data.keys,
         drums = data.drums,
-        amps = data.amps;
+        amps = data.amps,
+        bestSellers = data.bestSellers;
         
         setItems(guitars);
 
@@ -124,6 +142,13 @@ fetch('http://localhost:3000/items')
             "keys": keys,
         }
             
+    for(let i = 0; i < 2; i++) {
+        //document.getElementsByClassName('bestSellerImage')[i].setAttribute('src', `${bestSellers[i].imageSource}`);
+        document.querySelectorAll('.bestSellerContainer')[i].style.backgroundImage = `url(${bestSellers[i].imageSource})`;
+        document.getElementsByClassName('bestSellerName')[i].innerHTML = `${bestSellers[i].name}`;
+        document.getElementsByClassName('bestSellerPrice')[i].innerHTML = `${bestSellers[i].price / 100}$`;
+    }
+    
         
 
 
@@ -354,7 +379,14 @@ const loginVerification = async (email, password) => {
         })
         if (response.ok) {
             console.log('YOU HAVE ACCESS');
-            document.querySelector('.userImg').setAttribute('src', '../static/img/userActive.png');
+            closeForms();
+            const data = await response.json();
+            document.querySelector('.userImgActive').style.display = 'inline';
+            document.querySelector('.userImg').style.display = 'none';
+            document.getElementById('homeLogInBtn').style.visibility = 'hidden';
+            document.querySelector('.userName').innerHTML = data.name;
+            document.querySelector('.userName').style.display = 'inline';
+            console.log(data.name)
         } else {
             console.log("Invalid Email or Password")
         }

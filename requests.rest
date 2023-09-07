@@ -8,8 +8,8 @@ Content-Type: application/json
 {
     "name": "oskat",
     "email": "os@gmail.com",
-    "password": "12345o",
-})
+    "password": "12345o"
+}
 
 
 ###
@@ -19,7 +19,7 @@ Content-Type: application/json
 
 {
     "inputEmail": "test@gmail.com",
-    "inputPassword": "12345",
+    "inputPassword": "12345"
 }
 
 

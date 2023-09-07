@@ -590,6 +590,9 @@ document.querySelector("#homeButton").addEventListener("click", ()=>{
 document.querySelector("#serviceButton").addEventListener("click", ()=>{
     scroll.scrollTo(document.querySelector(".service"));
 });
+document.querySelector("#bestSellersButton").addEventListener("click", ()=>{
+    scroll.scrollTo(document.querySelector(".bestSellers"));
+});
 document.querySelectorAll(".product").forEach((product)=>{
     product.addEventListener("click", ()=>{
         scroll.scrollTo(document.querySelector(".catalog"));

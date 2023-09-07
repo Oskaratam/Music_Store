@@ -41,12 +41,17 @@
 
     "amps": [
         "amps",
-        {"imageSource": "../img/amps/fender.jpg", "name": "FENDER 65 DELUXE REVERB", "price": 160000},
+        {"imageSource": "../img/amps/fender.jpg", "name": "FENDER 65 DELUXE", "price": 160000},
         {"imageSource": "../img/amps/peavey.jpg", "name": "PEAVEY Classic 30", "price": 106000},
         {"imageSource": "../img/amps/yamaha.jpg", "name": "Yamaha THR15", "price": 52000},
         {"imageSource": "../img/amps/ashdown.jpg", "name": "ASHDOWN MAG 212T", "price": 45000},
         {"imageSource": "../img/amps/vox.jpg", "name": "VOX AC30C2X", "price": 220000},
         {"imageSource": "../img/amps/orange.jpg", "name": "Orange Crush Pix", "price": 87000}
+    ],
+
+    "bestSellers": [
+        {"imageSource": "../img/bestSellers/gibson.jpg", "name": "Gibson Doves in Flight", "price": 850000},
+        {"imageSource": "../img/bestSellers/yamaha.jpg", "name": "Yamaha Silent", "price": 130000}
     ]
 }
 
