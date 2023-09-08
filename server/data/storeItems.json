@@ -50,7 +50,14 @@
     ],
 
     "bestSellers": [
-        {"imageSource": "../img/bestSellers/gibson.jpg", "name": "Gibson Doves in Flight", "price": 850000},
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        {"imageSource": "../img/bestSellers/prs.jpg", "name": "PRS SE Silver Sky", "price": 190000},
         {"imageSource": "../img/bestSellers/yamaha.jpg", "name": "Yamaha Silent", "price": 130000}
     ]
 }

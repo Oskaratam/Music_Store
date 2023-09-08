@@ -280,16 +280,20 @@ a:hover {
     color:#49b18e;
 }
 .userName {
-    color: #3e8f74;
-    width: 140px;
-    height:150px;
+    color: white;
+    width: 120px;
+    height: 30px;
+    padding: 10px 5px 5px 5px;
     top: 110px;
     word-wrap: break-word;
+    text-overflow: ellipsis;
     font-size: 17px;
     position: absolute;
     margin-bottom:20px;
     text-align: center;
     display: none;
+    background-color: #2d2727;
+    border-radius: 10rem;
 }
 
 
@@ -539,18 +543,15 @@ a:hover {
 .textForMusicGenres {
     margin: 50px 0 30px 0;
     position: relative;
-    opacity: 0;
+    opacity: 1;
     align-self: center;
     text-align: center;
     letter-spacing: 1px;
     line-height: 100px;
     border-top: 3px solid black;
     padding-top: 15px;
-    transition: opacity 1s ease-out;
 }
-.textForMusicGenresOpened {
-    opacity: 1;
-}
+
 .textForMusicGenres > span {
     font-size: 50px;
     position: relative;
@@ -733,20 +734,14 @@ a:hover {
     grid-template-columns: 1fr 1fr;
 }
 
-#bestAddToCartBtn {
+#addToCartBtn.bestAddToCartBtn {
     align-self: end;
+    position:relative;
     font-size: 30px;
     width:90px;
     height:90px;
-    background-color: #448e75;
-    border-bottom-left-radius: 20%;
-    right:0;
-    cursor: pointer;
-    border:none;
-    box-shadow: 0 0 10px rgba(4, 4, 4, 0.4);
-    transition: background-color 0.5s;
 }
-#bestAddToCartBtn.addToCartBtnClicked {
+.bestAddToCartBtn.addToCartBtnClicked {
     background-color: rgba(119, 116, 116, 0.4);
 }
 
@@ -784,35 +779,76 @@ a:hover {
 /*SECTION ADDS2*/
 
 .container.adds2 {
-    height: 2500px;
+    height: 2350px;
 }
 
 .adds2Space {
     align-self: end;
     margin-bottom: 10px;
     width: 1600px;
-    height: 2500px;
+    height: 2350px;
     display: flex;
     flex-direction: column;
     
 }
 
+.chooseDescriptionBtn,
+.chooseDescriptionBtn2 {
+    width:200px;
+    height: 50px;
+    position:absolute;
+    border: 2px solid #448e75;
+    box-shadow: 0 0 20px grey;
+    background-color: rgb(244, 244, 244);
+    border-bottom: none;
+    border-radius: 10%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: font-size 0.4s, top 0.4s, height 0.4s;
+}
+
+.chooseDescriptionBtn {
+    left: 640px;
+    border-bottom: none;
+    top:68px;
+    z-index: 0;
+}
+
+.chooseDescriptionBtn2 {
+    left: 1450px;
+    top: 68px;
+}
+
+.chooseDescriptionBtnActive {
+    width:200px;
+    height: 85px;
+    font-size: 27px;
+    top: 30px;
+}
+
+
+
+
 .descriptionForBest {
     align-self: center;
+    z-index: 1;
     margin-top:120px;
     margin-right: 35px;
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(244, 244, 244);
     display: flex;
     flex-direction: column;
     align-self: center;
     width: 1300px;
-    height: 2150px;
+    height: 2230px;
+    border-radius: 5%;
+    border: 2px solid #448e75;
+    box-shadow: 0 0 20px grey;
 }
 
 .backgroundVideo {
     width:1600px;
     height: 650px;
-    margin-top: 80px;
+    margin-top: 60px;
     align-self: center;
 }
 
@@ -821,6 +857,7 @@ a:hover {
     width: 1150px;
     word-break: normal;
     font-size:25px;
+    line-height: 40px;
     text-align: center;
     margin: 30px 0 30px 0;
 }
@@ -839,9 +876,35 @@ a:hover {
 }
 
 
+.descriptionForBest2 {
+    align-self: center;
+    z-index: 1;
+    margin-top:120px;
+    margin-right: 35px;
+    background-color: rgb(244, 244, 244);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 1300px;
+    height: 2200px;
+    border-radius: 5%;
+    border: 2px solid #448e75;
+    box-shadow: 0 0 20px grey;
+    display:none;
+}
 
 
+.prsVideo {
+    align-self: center;
+    margin-top: 60px;
+    width:1100px;
+    height: 650px;
+}
 
+.johnImage {
+    align-self:center;
+    width: 1100px;
+}
 
 /*SECTION SERVICE*/
 
@@ -923,7 +986,7 @@ a:hover {
     border: 4px solid #448e75;
     box-shadow: 0 0 50px grey;
     position: relative;
-    margin:0 auto;
+    margin:0 auto 30px auto;
     right:30px;
     align-self: end;
     z-index: 2;
@@ -973,5 +1036,64 @@ a:hover {
 }
 
 .acceptImageOpened {
-    top: 32%;
+    top: 30%;
+}
+
+
+/*ABOUT US*/
+
+.container.aboutUs {
+    height: 1980px;
+}
+
+.aboutUsSpace {
+    align-self: end;
+    width: 2000px;
+    height: 1980px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../static/img/aboutUs.jpg');
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.aboutUsHeading {
+    font-size: 120px;
+    margin-top: 300px;
+    margin-left: 260px;
+}
+
+.aboutUsContainer {
+    background-color: white;
+    box-shadow: 0 0 20px grey;
+    width:1100px;
+    height:1300px;
+    align-self: center;
+    margin-top:120px;
+    margin-left: 50px;
+}
+
+.question {
+    color: #448e75;
+    font-size: 50px;
+    padding:0px 0px 0px 20px;
+    margin-bottom: 30px;
+    padding-top:0px;
+    font-weight: bolder;
+}
+
+.question2 {
+    color: #448e75;
+    font-size: 30px;
+    padding:0px 0px 0px 20px;
+    margin-bottom: 15px;
+    padding-top:0px;
+    font-weight: bolder;
+}
+
+.aboutUsText {
+    font-size: 25px;
+    line-height: 40px;
+    padding: 0px 20px 0px 20px;
+    margin-top:0px;
 }

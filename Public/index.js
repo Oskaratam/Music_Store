@@ -112,7 +112,7 @@ const setItems = (itemType) => {
 }
 }
 
-let guitars, bass, keys, drums, amps, buttonValues, itemTypesTxtToObject;
+let guitars, bass, keys, drums, amps, bestSellers, buttonValues, itemTypesTxtToObject;
 
 fetch('http://localhost:3000/items')
     .then(res => res.json())
@@ -140,13 +140,14 @@ fetch('http://localhost:3000/items')
             "bass": bass,
             "amps": amps,
             "keys": keys,
+            "bestSellers": bestSellers,
         }
             
     for(let i = 0; i < 2; i++) {
         //document.getElementsByClassName('bestSellerImage')[i].setAttribute('src', `${bestSellers[i].imageSource}`);
-        document.querySelectorAll('.bestSellerContainer')[i].style.backgroundImage = `url(${bestSellers[i].imageSource})`;
-        document.getElementsByClassName('bestSellerName')[i].innerHTML = `${bestSellers[i].name}`;
-        document.getElementsByClassName('bestSellerPrice')[i].innerHTML = `${bestSellers[i].price / 100}$`;
+        document.querySelectorAll('.bestSellerContainer')[i].style.backgroundImage = `url(${bestSellers[i + 7].imageSource})`;
+        document.getElementsByClassName('bestSellerName')[i].innerHTML = `${bestSellers[i + 7].name}`;
+        document.getElementsByClassName('bestSellerPrice')[i].innerHTML = `${bestSellers[i + 7].price / 100}$`;
     }
     
         
@@ -194,8 +195,8 @@ for (let i = 0; i < addToCartButtons.length; i++){
     addToCartButtons[i].addEventListener('click', () => {
         if(cartItemsCount <= 5){
             let currentAddToCartBtn = addToCartButtons[i];
-            addToCartButtons[i].classList.add('addToCartBtnClicked')
-            
+            addToCartButtons[i].classList.add('addToCartBtnClicked');
+                
             let itemBox = document.querySelectorAll('.item')[i];
             let itemObject = itemBox.dataset.itemtype;
             let addedItem = itemTypesTxtToObject[itemObject][i + 1];
@@ -408,6 +409,28 @@ signUp.addEventListener('submit', async (e) => {
 document.getElementById('logIn').addEventListener('submit', async (e) => {
     e.preventDefault();
    await loginVerification(document.getElementById("email").value, document.getElementById("password").value);
+})
+
+
+//DESCRIPTION BUTTONS//
+
+const btn1 = document.querySelector('.chooseDescriptionBtn');
+const btn2 = document.querySelector('.chooseDescriptionBtn2');
+const description1 = document.querySelector('.descriptionForBest'),
+    description2 = document.querySelector('.descriptionForBest2');
+
+btn1.addEventListener('click', () => {
+    btn1.classList.add('chooseDescriptionBtnActive');
+    btn2.classList.remove('chooseDescriptionBtnActive');
+    description1.style.display = 'none';
+    description2.style.display = 'flex';
+})
+
+btn2.addEventListener('click', () => {
+    btn2.classList.add('chooseDescriptionBtnActive')
+    btn1.classList.remove('chooseDescriptionBtnActive')
+    description2.style.display = 'none';
+    description1.style.display = 'flex';
 })
 
 

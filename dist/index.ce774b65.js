@@ -75,7 +75,7 @@ const setItems = (itemType)=>{
         document.getElementsByClassName("itemPrice")[i - 1].innerHTML = `${itemType[i].price / 100}$`;
     }
 };
-let guitars, bass, keys, drums, amps, buttonValues, itemTypesTxtToObject;
+let guitars, bass, keys, drums, amps, bestSellers, buttonValues, itemTypesTxtToObject;
 fetch("http://localhost:3000/items").then((res)=>res.json()).then((data)=>{
     guitars = data.guitars, bass = data.bass, keys = data.keys, drums = data.drums, amps = data.amps, bestSellers = data.bestSellers;
     setItems(guitars);
@@ -91,13 +91,14 @@ fetch("http://localhost:3000/items").then((res)=>res.json()).then((data)=>{
         "drums": drums,
         "bass": bass,
         "amps": amps,
-        "keys": keys
+        "keys": keys,
+        "bestSellers": bestSellers
     };
     for(let i = 0; i < 2; i++){
         //document.getElementsByClassName('bestSellerImage')[i].setAttribute('src', `${bestSellers[i].imageSource}`);
-        document.querySelectorAll(".bestSellerContainer")[i].style.backgroundImage = `url(${bestSellers[i].imageSource})`;
-        document.getElementsByClassName("bestSellerName")[i].innerHTML = `${bestSellers[i].name}`;
-        document.getElementsByClassName("bestSellerPrice")[i].innerHTML = `${bestSellers[i].price / 100}$`;
+        document.querySelectorAll(".bestSellerContainer")[i].style.backgroundImage = `url(${bestSellers[i + 7].imageSource})`;
+        document.getElementsByClassName("bestSellerName")[i].innerHTML = `${bestSellers[i + 7].name}`;
+        document.getElementsByClassName("bestSellerPrice")[i].innerHTML = `${bestSellers[i + 7].price / 100}$`;
     }
 }).catch((error)=>{
     console.error(error);
@@ -289,6 +290,22 @@ signUp.addEventListener("submit", async (e)=>{
 document.getElementById("logIn").addEventListener("submit", async (e)=>{
     e.preventDefault();
     await loginVerification(document.getElementById("email").value, document.getElementById("password").value);
+});
+//DESCRIPTION BUTTONS//
+const btn1 = document.querySelector(".chooseDescriptionBtn");
+const btn2 = document.querySelector(".chooseDescriptionBtn2");
+const description1 = document.querySelector(".descriptionForBest"), description2 = document.querySelector(".descriptionForBest2");
+btn1.addEventListener("click", ()=>{
+    btn1.classList.add("chooseDescriptionBtnActive");
+    btn2.classList.remove("chooseDescriptionBtnActive");
+    description1.style.display = "none";
+    description2.style.display = "flex";
+});
+btn2.addEventListener("click", ()=>{
+    btn2.classList.add("chooseDescriptionBtnActive");
+    btn1.classList.remove("chooseDescriptionBtnActive");
+    description2.style.display = "none";
+    description1.style.display = "flex";
 });
 
 //# sourceMappingURL=index.ce774b65.js.map

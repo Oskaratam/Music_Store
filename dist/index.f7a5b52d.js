@@ -593,6 +593,9 @@ document.querySelector("#serviceButton").addEventListener("click", ()=>{
 document.querySelector("#bestSellersButton").addEventListener("click", ()=>{
     scroll.scrollTo(document.querySelector(".bestSellers"));
 });
+document.querySelector("#aboutUsButton").addEventListener("click", ()=>{
+    scroll.scrollTo(document.querySelector(".aboutUs"));
+});
 document.querySelectorAll(".product").forEach((product)=>{
     product.addEventListener("click", ()=>{
         scroll.scrollTo(document.querySelector(".catalog"));

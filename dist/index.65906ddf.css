@@ -6,19 +6,19 @@
   background-color: #e3e3e3cc;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
+  flex-direction: column;
   align-self: flex-end;
   width: 450px;
   height: 750px;
   margin-top: 300px;
   transition: transform .7s, opacity .2s;
+  display: flex;
   position: fixed;
   transform: translate(100%);
 }
 
 .cartOpened {
   opacity: 1;
-  flex-direction: column;
-  display: flex;
   transform: translate(0%);
 }
 

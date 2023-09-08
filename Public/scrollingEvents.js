@@ -7,19 +7,23 @@ const scroll = new LocomotiveScroll({
 
 
 document.querySelector('#catalogButton').addEventListener('click', ()=> {
-    scroll.scrollTo(document.querySelector('.catalog'))
+    scroll.scrollTo(document.querySelector('.catalog'));
 })
 
 document.querySelector('#homeButton').addEventListener('click', () => {
-    scroll.scrollTo(document.querySelector('main'))
+    scroll.scrollTo(document.querySelector('main'));
 })
 
 document.querySelector('#serviceButton').addEventListener('click', () => {
-    scroll.scrollTo(document.querySelector('.service'))
+    scroll.scrollTo(document.querySelector('.service'));
 })
 document.querySelector('#bestSellersButton').addEventListener('click', () => {
     scroll.scrollTo(document.querySelector('.bestSellers'));
 });
+
+document.querySelector('#aboutUsButton').addEventListener('click', () => {
+    scroll.scrollTo(document.querySelector('.aboutUs'));
+})
 
 
 

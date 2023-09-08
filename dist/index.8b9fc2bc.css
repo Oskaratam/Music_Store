@@ -309,12 +309,16 @@ a:hover {
 }
 
 .userName {
-  color: #3e8f74;
+  color: #fff;
   word-wrap: break-word;
+  text-overflow: ellipsis;
   text-align: center;
-  width: 140px;
-  height: 150px;
+  background-color: #2d2727;
+  border-radius: 10rem;
+  width: 120px;
+  height: 30px;
   margin-bottom: 20px;
+  padding: 10px 5px 5px;
   font-size: 17px;
   display: none;
   position: absolute;
@@ -465,18 +469,6 @@ a:hover {
   height: 60px;
 }
 
-.container.adds {
-  overflow: hidden;
-}
-
-.wrapperForAdds {
-  flex-direction: column;
-  width: 110%;
-  height: 100%;
-  display: flex;
-  overflow: hidden;
-}
-
 .textForMusicGenres {
   opacity: 0;
   text-align: center;
@@ -492,6 +484,30 @@ a:hover {
 
 .textForMusicGenresOpened {
   opacity: 1;
+}
+
+.container.adds {
+  overflow: hidden;
+}
+
+.wrapperForAdds {
+  flex-direction: column;
+  width: 110%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.textForMusicGenres {
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 1px;
+  border-top: 3px solid #000;
+  align-self: center;
+  margin: 50px 0 30px;
+  padding-top: 15px;
+  line-height: 100px;
+  position: relative;
 }
 
 .textForMusicGenres > span {
@@ -670,21 +686,15 @@ a:hover {
   display: grid;
 }
 
-#bestAddToCartBtn {
-  cursor: pointer;
-  background-color: #448e75;
-  border: none;
-  border-bottom-left-radius: 20%;
+#addToCartBtn.bestAddToCartBtn {
   align-self: end;
   width: 90px;
   height: 90px;
   font-size: 30px;
-  transition: background-color .5s;
-  right: 0;
-  box-shadow: 0 0 10px #04040466;
+  position: relative;
 }
 
-#bestAddToCartBtn.addToCartBtnClicked {
+.bestAddToCartBtn.addToCartBtnClicked {
   background-color: #77747466;
 }
 
@@ -718,34 +728,71 @@ a:hover {
 }
 
 .container.adds2 {
-  height: 2500px;
+  height: 2350px;
 }
 
 .adds2Space {
   flex-direction: column;
   align-self: end;
   width: 1600px;
-  height: 2500px;
+  height: 2350px;
   margin-bottom: 10px;
   display: flex;
 }
 
+.chooseDescriptionBtn, .chooseDescriptionBtn2 {
+  cursor: pointer;
+  background-color: #f4f4f4;
+  border: 2px solid #448e75;
+  border-bottom: none;
+  border-radius: 10%;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  transition: font-size .4s, top .4s, height .4s;
+  position: absolute;
+  box-shadow: 0 0 20px gray;
+}
+
+.chooseDescriptionBtn {
+  z-index: 0;
+  border-bottom: none;
+  top: 68px;
+  left: 640px;
+}
+
+.chooseDescriptionBtn2 {
+  top: 68px;
+  left: 1450px;
+}
+
+.chooseDescriptionBtnActive {
+  width: 200px;
+  height: 85px;
+  font-size: 27px;
+  top: 30px;
+}
+
 .descriptionForBest {
-  background-color: #eaeaea;
+  z-index: 1;
+  background-color: #f4f4f4;
+  border: 2px solid #448e75;
+  border-radius: 5%;
   flex-direction: column;
   align-self: center;
   width: 1300px;
-  height: 2150px;
+  height: 2230px;
   margin-top: 120px;
   margin-right: 35px;
   display: flex;
+  box-shadow: 0 0 20px gray;
 }
 
 .backgroundVideo {
   align-self: center;
   width: 1600px;
   height: 650px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .textForBest {
@@ -755,6 +802,7 @@ a:hover {
   width: 1150px;
   margin: 30px 0;
   font-size: 25px;
+  line-height: 40px;
 }
 
 .controlsImage {
@@ -768,6 +816,33 @@ a:hover {
   align-self: center;
   width: 1150px;
   margin-left: 6px;
+}
+
+.descriptionForBest2 {
+  z-index: 1;
+  background-color: #f4f4f4;
+  border: 2px solid #448e75;
+  border-radius: 5%;
+  flex-direction: column;
+  align-self: center;
+  width: 1300px;
+  height: 2200px;
+  margin-top: 120px;
+  margin-right: 35px;
+  display: none;
+  box-shadow: 0 0 20px gray;
+}
+
+.prsVideo {
+  align-self: center;
+  width: 1100px;
+  height: 650px;
+  margin-top: 60px;
+}
+
+.johnImage {
+  align-self: center;
+  width: 1100px;
 }
 
 .serviceBackground {
@@ -843,7 +918,7 @@ a:hover {
   align-self: end;
   width: 500px;
   height: 600px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   display: flex;
   position: relative;
   right: 30px;
@@ -894,7 +969,61 @@ a:hover {
 }
 
 .acceptImageOpened {
-  top: 32%;
+  top: 30%;
+}
+
+.container.aboutUs {
+  height: 1980px;
+}
+
+.aboutUsSpace {
+  z-index: 2;
+  background-image: url("aboutUs.79604cc6.jpg");
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-self: end;
+  width: 2000px;
+  height: 1980px;
+  display: flex;
+}
+
+.aboutUsHeading {
+  margin-top: 300px;
+  margin-left: 260px;
+  font-size: 120px;
+}
+
+.aboutUsContainer {
+  background-color: #fff;
+  align-self: center;
+  width: 1100px;
+  height: 1300px;
+  margin-top: 120px;
+  margin-left: 50px;
+  box-shadow: 0 0 20px gray;
+}
+
+.question {
+  color: #448e75;
+  margin-bottom: 30px;
+  padding: 0 0 0 20px;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.question2 {
+  color: #448e75;
+  margin-bottom: 15px;
+  padding: 0 0 0 20px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.aboutUsText {
+  margin-top: 0;
+  padding: 0 20px;
+  font-size: 25px;
+  line-height: 40px;
 }
 
 /*# sourceMappingURL=index.8b9fc2bc.css.map */

@@ -74,8 +74,8 @@
                         <li id="homeButton">HOME</li>
                         <li id="catalogButton">CATALOG</li>
                         <li id="bestSellersButton">BEST SELLERS</li>
-                        <li id="aboutUsButton">ABOUT US</li>
                         <li id="serviceButton">SERVICE </li>
+                        <li id="aboutUsButton">ABOUT US</li>
                     </ul>
                     <address>
                         <p class="contact">Contact Us</p>
@@ -181,7 +181,7 @@
                 <div style="background-color: #2d2727; width: 350px; height: 1180px"></div>
             </div>
             <div class="wrapperForAdds">
-                <div data-scroll="" data-scroll-class="textForMusicGenresOpened" data-scroll-repeat="true" class="textForMusicGenres">
+                <div class="textForMusicGenres">
                     <span>Instruments for ANY genre</span>
                 </div>
 
@@ -256,13 +256,13 @@
                 </div>         
             </div>
             <div class="bestSellerSpace">
-                <div class="bestSellerContainer firstBest">
+                <div data-itemtype="bestSellers" class="bestSellerContainer firstBest item">
                     <img class="fireImg" src="/fire.5a82e5a1.png">
-                    <button id="bestAddToCartBtn">+</button>
+                    <button id="addToCartBtn" class="bestAddToCartBtn">+</button>
                 </div>
-                <div class="bestSellerContainer secondBest">
+                <div data-itemtype="bestSellers" class="bestSellerContainer secondBest item">
                     <img class="fireImg" src="/fire.5a82e5a1.png">
-                    <button id="bestAddToCartBtn">+</button>
+                    <button id="addToCartBtn" class="bestAddToCartBtn">+</button>
                 </div>
             </div>
         </div>
@@ -273,27 +273,36 @@
                 </div>         
             </div>
             <div class="adds2Space">
+                <button data-scroll="" data-scroll-call="closeBackground" data-scroll-repeat="true" class="chooseDescriptionBtn">About</button>
+                <button class="chooseDescriptionBtn2 chooseDescriptionBtnActive">About</button>
+
+
+
                 <div class="descriptionForBest">
+                    <h1 style="align-self: center; margin-top: 40px; margin-bottom: 0; font-size: 50px; font-weight: lighter">Play anywhere and anytime!</h1>
                     <video class="backgroundVideo" autoplay="" muted="" loop="">
                         <source src="/silent.ef98bc93.mp4">
                     </video>
-                    <h1 style="align-self: center; margin-top: 40px; margin-bottom: 0; font-size: 50px; font-weight: lighter">Play anywhere and anytime!</h1>
                     <p class="textForBest">The ergonomic profile of the neck and the scale length of 634 mm for playing comfort are based on many years of experience in creating acoustic guitars, and the unique ultra-thin body is perfect for musicians who play both electric guitars and acoustic instruments.</p>
                     <p class="textForBest">The specially designed frame structure, which imitates the body of the instrument, guarantees excellent comfort when playing while sitting or standing. In addition, the structural frames are removable for compact storage and carrying of the tool in the case. The frame design has a cutout that provides full access to all frets.</p>
                     <img class="controlsImage" src="/controls.b945c868.jpg">
                     <p class="textForBest">Connect your smartphone, laptop or any other audio signal source and play along with your favorite artist or to your own arrangements. Enrich your sound with authentic sound effects of the highest quality, connect headphones for silent sessions - SLG is incredibly rich in functionality, allowing you to enjoy the game even more. But that's not all - the SLG is equipped with an accurate built-in chromatic tuner and can be operated both from batteries and from an external power source!</p>
                     <img class="silentGuitarsImage" src="/silent.69ca8ff5.jpg">
                 </div>
+
+                <div class="descriptionForBest2">
+                    <h1 style="align-self: center; margin-top: 40px; margin-bottom: 0; font-size: 50px; font-weight: lighter">A True Work of Art</h1>
+                    <iframe class="prsVideo" src="https://www.youtube.com/embed/sl3mSWCT7Iw?si=PcBkEPqCCv9tEPNJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                    <p style="margin-top: 80px" class="textForBest">The PRS SE Silver Sky is a familiar iteration of the original Silver Sky model that was first introduced with John Mayer in 2018. This workhorse guitar provides ample tone and playability in four distinct colors, delivering looks, feel, and sound.</p>
+                    <p class="textForBest">The PRS SE Silver Sky starts with a poplar body, bolt-on maple neck, and rosewood fretboard with PRS trademark bird inlays. The 22-fret, 25.5” scale length neck features the original 635JM carve and an 8.5” fretboard radius, so the PRS SE Silver Sky will feel right at home. Plug it in, and the three single-coil 635JM “S” pickups will bark and sing. This guitar is anchored by a two-point steel tremolo, synthetic bone nut, and vintage-style tuners. Other design features include the PRS Silver Sky inverted headstock shape and the PRS double-acting truss rod (accessible from the front of the headstock for ease of use). Ships with PRS Classic 10-46 strings and gig bag.</p>
+                    <p class="textForBest">PRS guitars are perfect for both beginners and experienced guitarists. These are high-quality instruments that provide comfort when playing and rich classical sound.</p>
+                    <img class="johnImage" src="/john.ba5bb956.jpg">
+                </div>
             </div>
                 
 
 
         </div>
-
-
-
-
-
 
         <div class="container service">
             <div class="menuWrapper">
@@ -322,5 +331,32 @@
                 <input class="sendReportButton" name="IssueMessage" type="submit" value="Send">
             </form>
         </div>
+
+        <div class="container aboutUs">
+            <div class="menuWrapper">
+                <div style="background-color: #2d2727; width: 350px; height: 1980px">
+                </div>         
+            </div>
+            <div class="aboutUsSpace">
+                <h4 class="aboutUsHeading">About Muse Vibe</h4>
+                <article class="aboutUsContainer">
+                    <p class="question">Who we are?</p>
+                    <p class="aboutUsText">Music Vibe was born from the dreams of aspiring musicians who understood the importance of quality instruments and exceptional service. Founded by a group of individuals deeply passionate about music, we set out on a journey to create a music store that truly resonated with the needs and desires of fellow musicians.</p>
+                    <p class="question2">Quality</p>
+                    <p class="aboutUsText">We understand that the heart and soul of any musical performance lies in the instruments themselves. That's why, at Music Vibe, we go the extra mile to ensure that every instrument we offer is of the highest quality. Before reaching your hands, each instrument is carefully inspected, tuned, and set up by our team of experienced masters. This meticulous attention to detail guarantees that you receive an instrument that not only meets but exceeds your expectations.</p>
+                    <p class="question2">Community</p>
+                    <p class="aboutUsText">At Music Vibe, we don't just sell instruments; we cultivate a vibrant community of musicians who share a passion for music. Join our growing community, and you'll find inspiration, resources, and support from fellow musicians and our dedicated team.</p>
+                    <p class="question2">Store</p>
+                    <p class="aboutUsText">Our physical store, nestled in the heart of Kyiv, is more than just a place to buy instruments – it's a gathering place for artists to connect, collaborate, and jam together.</p>
+                    <p class="aboutUsText">Step inside our store, and you'll immediately feel the warm, inviting atmosphere. Our comfortable seating areas invite musicians to linger, chat, and exchange creative ideas. We often host open jam sessions, where local talents come together to explore new sounds and styles, creating an environment where musical magic happens spontaneously.</p>
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
     </body>
 </body></html>
