@@ -4,7 +4,7 @@
   "description": "<<<<<<< HEAD\r Creating a web page with pure HTML,CSS and JavaScript. It is a music store website\r =======\r Сreating a music store website with pure HTML,CSS and JavaScript",
   "scripts": {
     "dev": "parcel ./Public/index.html",
-    "startServer": "nodemon ./server/server.js",
+    "startServer": "node ./server/server.js",
     "build": "parcel build ./Public/index.html",
     "prod": "parcel ./Public/index.html"
   },
