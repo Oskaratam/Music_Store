@@ -48,8 +48,8 @@ const forms = document.querySelector('.content'),
             //validating form
             signUp.addEventListener('submit', (e) => {
                 let messageForName = [],
-                messageForPassword = [];
-                messageForEmail = [];
+                    messageForPassword = [],
+                    messageForEmail = [];
                 passwordError.innerHTML = null;
                 nameError.innerHTML = null;
                 emailError.innerHTML = null;

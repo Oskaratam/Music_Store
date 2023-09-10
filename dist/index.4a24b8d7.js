@@ -24,8 +24,7 @@ showPasswordBtn2.addEventListener("click", ()=>{
 });
 //validating form
 signUp.addEventListener("submit", (e)=>{
-    let messageForName = [], messageForPassword = [];
-    messageForEmail = [];
+    let messageForName = [], messageForPassword = [], messageForEmail = [];
     passwordError.innerHTML = null;
     nameError.innerHTML = null;
     emailError.innerHTML = null;
