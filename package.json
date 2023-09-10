@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "<<<<<<< HEAD\r Creating a web page with pure HTML,CSS and JavaScript. It is a music store website\r =======\r Сreating a music store website with pure HTML,CSS and JavaScript",
   "scripts": {
-    "start": "nodemon ./server/server.js && parcel build ./Public/index.html && parcel ./Public/index.html",
+    "start": "node ./server/server.js && parcel build ./Public/index.html && parcel ./Public/index.html",
     "dev": "parcel ./Public/index.html",
     "startServer": "nodemon ./server/server.js",
     "build": "parcel build ./Public/index.html",
