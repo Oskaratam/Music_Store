@@ -71,7 +71,6 @@ main {
 
 .menu_bar {
   z-index: 2;
-  z-index: 2;
   background-color: #2d2727;
   flex-direction: column;
   width: 350px;

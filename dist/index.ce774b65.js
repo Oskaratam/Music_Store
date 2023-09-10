@@ -76,7 +76,7 @@ const setItems = (itemType)=>{
     }
 };
 let guitars, bass, keys, drums, amps, bestSellers, buttonValues, itemTypesTxtToObject;
-fetch("http://localhost:3000/items").then((res)=>res.json()).then((data)=>{
+fetch("https://muse-vibe-server.onrender.com/items").then((res)=>res.json()).then((data)=>{
     guitars = data.guitars, bass = data.bass, keys = data.keys, drums = data.drums, amps = data.amps, bestSellers = data.bestSellers;
     setItems(guitars);
     buttonValues = [
@@ -207,7 +207,7 @@ const removeItemEvent = (button, element, arrayItem, currentAddToCartBtn)=>{
 };
 ////////////////////////////////////////////////////////////////////
 /*CHECKOUT*/ checkout.addEventListener("click", ()=>{
-    fetch("http://localhost:3000/create-checkout-session", {
+    fetch("https://muse-vibe-server.onrender.com/create-checkout-session", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -239,7 +239,7 @@ document.querySelector(".issueForm").onsubmit = acceptReport;
 const logIn = document.getElementById("logIn"), signUp = document.getElementById("signUp"), signUpBtn = document.getElementById("signUpBtn");
 const createUser = async (name, email, password)=>{
     try {
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch("https://muse-vibe-server.onrender.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -259,7 +259,7 @@ const createUser = async (name, email, password)=>{
 createUser("testUser", "test@gmail.com", "12345");
 const loginVerification = async (email, password)=>{
     try {
-        const response = await fetch("http://localhost:3000/users/login", {
+        const response = await fetch("https://muse-vibe-server.onrender.com/users/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

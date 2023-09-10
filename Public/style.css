@@ -71,7 +71,6 @@ main {
     display: flex;
     position: fixed;
     z-index: 2;
-    z-index: 2;
     flex-direction:column;
     background-color: #2d2727;
     width: 350px;

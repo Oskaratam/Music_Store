@@ -1,5 +1,5 @@
 
-require('dotenv').config({path: 'C:/Users/User/repos/Music_Store/.env'});
+require('dotenv').config();
 
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
@@ -113,5 +113,7 @@ app.post('/users/login', async (req, res) => {
 
 
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log(`Server listens on port 3000`)
+});
 
