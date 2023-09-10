@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "parcel ./Public/index.html",
     "startServer": "nodemon ./server/server.js",
-    "build": "parcel build ./Public/index.html",
+    "build": "install",
+    "buildStatic": "parcel build ./Public/index.html",
     "prod": "parcel ./Public/index.html"
   },
   "keywords": [],
