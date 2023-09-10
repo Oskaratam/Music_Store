@@ -54,8 +54,8 @@ app.post('/create-checkout-session', async (req, res) => {
                     }
                 }
             }),
-            success_url: `${process.env.PUBLIC_URL}`,
-            cancel_url: `${process.env.PUBLIC_URL}`,
+            success_url: 'https://muse-vibe-public.onrender.com/',
+            cancel_url: 'https://muse-vibe-public.onrender.com/',
         })
         res.json({ url: session.url});
     } catch (e) {
