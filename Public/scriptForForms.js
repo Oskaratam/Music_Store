@@ -1,15 +1,15 @@
-const forms = document.querySelector('.content'),
-                logInBtn = document.getElementById("logInBtn"),
-                changeBtn = document.getElementById("changeBtn"),
-                showPasswordBtn = document.getElementById("showPasswordBtn"),
-                showPasswordBtn2 = document.getElementById("showPasswordBtn2"),
-                password = document.getElementById("password"),
-                email2 = document.getElementById("email2"),
-                name2 = document.getElementById("name2"),
-                password2 = document.getElementById("password2"),
-                nameError = document.getElementById("nameError"),
-                emailError = document.getElementById("emailError"),
-                passwordError = document.getElementById("passwordError");
+const forms = document.querySelector('.content');
+const logInBtn = document.getElementById("logInBtn");
+const changeBtn = document.getElementById("changeBtn");
+const showPasswordBtn = document.getElementById("showPasswordBtn");
+const showPasswordBtn2 = document.getElementById("showPasswordBtn2");
+const password = document.getElementById("password");
+const email2 = document.getElementById("email2");
+const name2 = document.getElementById("name2");
+const password2 = document.getElementById("password2");
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const passwordError = document.getElementById("passwordError");
 
 
 
@@ -47,9 +47,9 @@ const forms = document.querySelector('.content'),
 
             //validating form
             signUp.addEventListener('submit', (e) => {
-                let messageForName = [],
-                    messageForPassword = [],
-                    messageForEmail = [];
+                const messageForName = [];
+                const messageForPassword = [];
+                const messageForEmail = [];
                 passwordError.innerHTML = null;
                 nameError.innerHTML = null;
                 emailError.innerHTML = null;
