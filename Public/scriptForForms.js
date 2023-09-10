@@ -1,6 +1,6 @@
 const forms = document.querySelector('.content'),
                 logInBtn = document.getElementById("logInBtn"),
-                changeBtn = document.getElementById("changeBtn");
+                changeBtn = document.getElementById("changeBtn"),
                 showPasswordBtn = document.getElementById("showPasswordBtn"),
                 showPasswordBtn2 = document.getElementById("showPasswordBtn2"),
                 password = document.getElementById("password"),

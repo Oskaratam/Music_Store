@@ -1,5 +1,4 @@
-const forms = document.querySelector(".content"), logInBtn = document.getElementById("logInBtn"), changeBtn = document.getElementById("changeBtn");
-showPasswordBtn = document.getElementById("showPasswordBtn"), showPasswordBtn2 = document.getElementById("showPasswordBtn2"), password = document.getElementById("password"), email2 = document.getElementById("email2"), name2 = document.getElementById("name2"), password2 = document.getElementById("password2"), nameError = document.getElementById("nameError"), emailError = document.getElementById("emailError"), passwordError = document.getElementById("passwordError");
+const forms = document.querySelector(".content"), logInBtn = document.getElementById("logInBtn"), changeBtn = document.getElementById("changeBtn"), showPasswordBtn = document.getElementById("showPasswordBtn"), showPasswordBtn2 = document.getElementById("showPasswordBtn2"), password = document.getElementById("password"), email2 = document.getElementById("email2"), name2 = document.getElementById("name2"), password2 = document.getElementById("password2"), nameError = document.getElementById("nameError"), emailError = document.getElementById("emailError"), passwordError = document.getElementById("passwordError");
 changeBtn.innerText = "Create account";
 changeBtn.addEventListener("click", ()=>{
     logIn.classList.toggle("hidden");
