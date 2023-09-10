@@ -1,8 +1,6 @@
 const forms = document.querySelector('.content'),
                 logInBtn = document.getElementById("logInBtn"),
                 changeBtn = document.getElementById("changeBtn");
-                logInForm = document.getElementById("logIn"),
-                signUpForm = document.getElementById("signUp"),
                 showPasswordBtn = document.getElementById("showPasswordBtn"),
                 showPasswordBtn2 = document.getElementById("showPasswordBtn2"),
                 password = document.getElementById("password"),
@@ -17,8 +15,8 @@ const forms = document.querySelector('.content'),
 
             changeBtn.innerText = 'Create account';
             changeBtn.addEventListener('click', () => {
-                logInForm.classList.toggle('hidden');
-                signUpForm.classList.toggle('hidden');
+                logIn.classList.toggle('hidden');
+                signUp.classList.toggle('hidden');
                 forms.classList.toggle('blackTheme');
                 document.querySelectorAll('.signUpInputs').forEach(el => {
                     el.classList.toggle('blackInputs')
@@ -48,7 +46,7 @@ const forms = document.querySelector('.content'),
 
 
             //validating form
-            signUpForm.addEventListener('submit', (e) => {
+            signUp.addEventListener('submit', (e) => {
                 let messageForName = [],
                 messageForPassword = [];
                 messageForEmail = [];
