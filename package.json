@@ -7,7 +7,7 @@
     "dev": "parcel ./Public/index.html",
     "startServer": "nodemon ./server/server.js",
     "build": "install",
-    "buildStatic": "parcel build ./Public/index.html && install",
+    "buildStatic": "parcel build ./Public/index.html && npm install",
     "prod": "parcel ./Public/index.html"
   },
   "keywords": [],
