@@ -401,7 +401,7 @@ const loginVerification = async (email, password) => {
 
 
 
-signUp.addEventListener('submit', async (e) => {
+signUp.addEventListener('submit', async () => {
     await createUser(document.getElementById("name2").value, document.getElementById('email2').value, document.getElementById('password2').value)
 })
 
