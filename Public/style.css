@@ -1,5 +1,6 @@
 /*MAIN SECTION*/
 body {
+    zoom: 90%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: relative;
     background-color:rgb(29, 24, 24);
