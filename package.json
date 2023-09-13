@@ -6,7 +6,7 @@
     "start": "node ./server/server.js && parcel build ./Public/index.html && parcel ./Public/index.html",
     "dev": "parcel ./Public/index.html",
     "startServer": "nodemon ./server/server.js",
-    "build": "install",
+    "build": "parcel build ./Public/index.html",
     "buildStatic": "parcel build ./Public/index.html && npm install",
     "prod": "parcel ./Public/index.html"
   },
