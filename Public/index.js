@@ -14,7 +14,12 @@ const container = document.querySelector('main'),
       issueReportInput = document.querySelector('.issueReportInput');
 
 window.addEventListener('scroll', ()=>{
-    document.body.style.cssText = `--scrollTop: ${window.scrollY}px`
+    document.body.style.cssText = `--scrollTop: ${window.scrollY}px`;
+
+    const scrollX = window.scrollX;
+    document.querySelector('.menu_bar').style.transform = `translateX(-${scrollX}px)`;
+    document.querySelector('#user').style.transform = `translateX(-${scrollX}px)`;
+    document.querySelector('.cartBtn').style.transform = `translateX(-${scrollX}px)`
 })
 
 let currentBg = 1,
@@ -434,15 +439,6 @@ btn2.addEventListener('click', () => {
 })
 
 
-//SCROLLING FIXED ELEMENTS//
-
-window.addEventListener('scroll', () => {
-    const scrollX = window.scrollX || window.pageXOffset;
-
-    document.querySelector('.menu_bar').style.transform = `translateX(-${scrollX}px)`;
-    document.querySelector('#user').style.transform = `translateX(-${scrollX}px)`;
-    document.querySelector('.cartBtn').style.transform = `translateX(-${scrollX}px)`
-})
 
 
 

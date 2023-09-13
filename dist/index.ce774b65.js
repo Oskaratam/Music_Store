@@ -2,6 +2,10 @@ const container = document.querySelector("main"), formDialog = document.querySel
 addToCartButtons = document.querySelectorAll("#addToCartBtn"), countCartItemsImage = document.getElementById("countCartItemsImage"), totalPrice = document.querySelector(".totalPrice"), checkout = document.getElementById("checkout"), sendReportButton = document.querySelector(".sendReportButton"), issueReportInput = document.querySelector(".issueReportInput");
 window.addEventListener("scroll", ()=>{
     document.body.style.cssText = `--scrollTop: ${window.scrollY}px`;
+    const scrollX = window.scrollX;
+    document.querySelector(".menu_bar").style.transform = `translateX(-${scrollX}px)`;
+    document.querySelector("#user").style.transform = `translateX(-${scrollX}px)`;
+    document.querySelector(".cartBtn").style.transform = `translateX(-${scrollX}px)`;
 });
 let currentBg = 1, bg;
 const NUMBERS = {
@@ -306,13 +310,6 @@ btn2.addEventListener("click", ()=>{
     btn1.classList.remove("chooseDescriptionBtnActive");
     description2.style.display = "none";
     description1.style.display = "flex";
-});
-//SCROLLING FIXED ELEMENTS//
-window.addEventListener("scroll", ()=>{
-    const scrollX = window.scrollX || window.pageXOffset;
-    document.querySelector(".menu_bar").style.transform = `translateX(-${scrollX}px)`;
-    document.querySelector("#user").style.transform = `translateX(-${scrollX}px)`;
-    document.querySelector(".cartBtn").style.transform = `translateX(-${scrollX}px)`;
 });
 
 //# sourceMappingURL=index.ce774b65.js.map
