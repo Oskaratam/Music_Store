@@ -307,5 +307,12 @@ btn2.addEventListener("click", ()=>{
     description2.style.display = "none";
     description1.style.display = "flex";
 });
+//SCROLLING FIXED ELEMENTS//
+window.addEventListener("scroll", ()=>{
+    const scrollX = window.scrollX || window.pageXOffset;
+    document.querySelector(".menu_bar").style.transform = `translateX(-${scrollX}px)`;
+    document.querySelector("#user").style.transform = `translateX(-${scrollX}px)`;
+    document.querySelector(".cartBtn").style.transform = `translateX(-${scrollX}px)`;
+});
 
 //# sourceMappingURL=index.ce774b65.js.map
