@@ -46,7 +46,7 @@ const passwordError = document.getElementById("passwordError");
 
 
             //validating form
-            signUp.addEventListener('submit', (e) => {
+            signUp.addEventListener('submit', (event) => {
                 const messageForName = [];
                 const messageForPassword = [];
                 const messageForEmail = [];
@@ -88,17 +88,17 @@ const passwordError = document.getElementById("passwordError");
             
 
                 if (messageForName.length > 0) {
-                    e.preventDefault();
+                    event.preventDefault();
                     nameError.append(messageForName.join(' | '));
                     name2.classList.add('errorInput');
                 }
                 if (messageForPassword.length > 0) {
-                    e.preventDefault();
+                    event.preventDefault();
                     passwordError.append(messageForPassword.join(' | '));
                     password2.classList.add('errorInput');
                 }
                 if (messageForEmail.length > 0){
-                    e.preventDefault();
+                    event.preventDefault();
                     emailError.append(messageForEmail.join(' | '))
                     email2.classList.add('errorInput')
                 }
