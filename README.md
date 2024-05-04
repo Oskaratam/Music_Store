@@ -1,7 +1,14 @@
 # Music_Store
 
-Creating a  music store website with pure HTML,CSS and JavaScript. 
-
+Music store website with working online shop, payment system, authentication. 
 
 LIVE PREVIEW: https://muse-vibe-public.onrender.com/
+
+Technologies Used :
++.Html
++.CSS
++.JavaScript
++.Parcel
++.NodeJs
++.StripeAPI
 
