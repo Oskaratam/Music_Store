@@ -34,7 +34,7 @@ showPasswordBtn2.addEventListener("click", ()=>{
     showPassword(password2, showPasswordBtn2);
 });
 //validating form
-signUp.addEventListener("submit", (e)=>{
+signUp.addEventListener("submit", (event)=>{
     const messageForName = [];
     const messageForPassword = [];
     const messageForEmail = [];
@@ -58,17 +58,17 @@ signUp.addEventListener("submit", (e)=>{
     if (email2.value == "" || email2.value == null) messageForEmail.push("Enter your email");
     else if (!/^([\w-\.]+)@([a-z]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/.test(email2.value)) messageForEmail.push("Invalid email");
     if (messageForName.length > 0) {
-        e.preventDefault();
+        event.preventDefault();
         nameError.append(messageForName.join(" | "));
         name2.classList.add("errorInput");
     }
     if (messageForPassword.length > 0) {
-        e.preventDefault();
+        event.preventDefault();
         passwordError.append(messageForPassword.join(" | "));
         password2.classList.add("errorInput");
     }
     if (messageForEmail.length > 0) {
-        e.preventDefault();
+        event.preventDefault();
         emailError.append(messageForEmail.join(" | "));
         email2.classList.add("errorInput");
     }
